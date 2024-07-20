@@ -97,8 +97,11 @@ func _on_hit_collision_body_entered(body):
 		bCanMove = false
 		lock_rotation = false
 		modulate = Color.DARK_RED
+
+		var direction = Vector2.UP
+
 		var sanitizePlayerPosition = global_position
-		var direction = (global_position - body.global_position).normalized()
+		direction = (global_position - body.global_position).normalized()
 		direction = SanitizeDirection(direction)
 		apply_impulse(direction * MoveSpeed * 40)
 		if direction == Vector2.RIGHT:
