@@ -1,20 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3u52pew66m5c"]
 
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
-[ext_resource type="PackedScene" uid="uid://bacj4ugsak7hf" path="res://Prefab/Boundary.tscn" id="2_543uk"]
 [ext_resource type="PackedScene" uid="uid://cn4c8ce1g64x" path="res://Prefab/Player.tscn" id="3_id3je"]
 [ext_resource type="PackedScene" uid="uid://bl8s7sgb3th6r" path="res://Prefab/Ball.tscn" id="4_jg5su"]
 [ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="5_h84xd"]
+[ext_resource type="PackedScene" uid="uid://dr6xkalt84ha0" path="res://Prefab/BrickPurple.tscn" id="5_vce5a"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Boundary" parent="." instance=ExtResource("2_543uk")]
-position = Vector2(984, 1018)
 
 [node name="BackGround" type="Node2D" parent="."]
 
 [node name="Wall" parent="BackGround" instance=ExtResource("1_vhe7w")]
-position = Vector2(-650, -201)
+position = Vector2(-650, -277)
 scale = Vector2(4, 4)
 
 [node name="Wall4" parent="BackGround" instance=ExtResource("1_vhe7w")]
@@ -47,6 +44,15 @@ position = Vector2(1721, 647)
 [node name="StaticBody2D6" parent="." instance=ExtResource("5_h84xd")]
 position = Vector2(1467, 647)
 
+[node name="StaticBody2D13" parent="." instance=ExtResource("5_h84xd")]
+position = Vector2(1677, 1022)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("5_h84xd")]
+position = Vector2(1810, 1022)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("5_h84xd")]
+position = Vector2(1556, 1022)
+
 [node name="StaticBody2D7" parent="." instance=ExtResource("5_h84xd")]
 position = Vector2(1467, 579)
 
@@ -70,3 +76,19 @@ position = Vector2(285, 647)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("5_h84xd")]
 position = Vector2(416, 647)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 513)
+zoom = Vector2(0.9, 0.9)
+
+[node name="BrickPurple" parent="." instance=ExtResource("5_vce5a")]
+position = Vector2(1069, 535)
+
+[node name="BrickPurple2" parent="." instance=ExtResource("5_vce5a")]
+position = Vector2(1069, 480)
+
+[node name="BrickPurple3" parent="." instance=ExtResource("5_vce5a")]
+position = Vector2(1069, 423)
+
+[node name="BrickPurple4" parent="." instance=ExtResource("5_vce5a")]
+position = Vector2(1069, 365)

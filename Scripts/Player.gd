@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var MoveSpeed = 800
+var JetpackSpeed = 300
 
 var MaxSpeed = 600
 
@@ -32,6 +33,9 @@ func _process(delta):
 		if Input.is_action_pressed("move_right"):
 			velocity.x += MoveSpeed
 			PlayerDirection = DIRECTION.RIGHT
+
+		if Input.is_action_pressed("jetpack"):
+			velocity.y -= JetpackSpeed
 
 		apply_impulse(velocity *delta * 400)
 		UpdateRacket()
@@ -71,7 +75,7 @@ func MoveRacket():
 		targetDegrees = -targetDegrees
 
 	var tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .25)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .15)
 	tween.set_trans(Tween.TRANS_LINEAR)
 	await tween.finished
 	tween = get_tree().create_tween()
