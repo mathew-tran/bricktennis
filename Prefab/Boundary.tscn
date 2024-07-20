@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bacj4ugsak7hf"]
+
+[ext_resource type="Texture2D" uid="uid://13rhmnax8mk5" path="res://Art/BoundaryLine.svg" id="1_cc6t3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxyql"]
+size = Vector2(1100, 20)
+
+[node name="Boundary" type="Area2D"]
+position = Vector2(989, 1096)
+scale = Vector2(2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cc6t3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sxyql")

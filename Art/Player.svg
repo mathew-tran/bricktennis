@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="34.96283mm"
+   height="74.59201mm"
+   viewBox="0 0 34.96283 74.59201"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-51.785711,-173.19554)">
+    <g
+       id="g19"
+       transform="translate(26.023632,134.80242)">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         d="m 40.851301,65.877323 c 0,0 10.304833,-3.680299 8.832712,-5.336432 -1.472118,-1.656133 -11.224905,-7.176579 -11.224905,-7.176579 l 6.808549,-6.624537"
+         id="path7" />
+      <rect
+         style="fill:#cc0000;fill-rule:evenodd;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect3"
+         width="23.921932"
+         height="25.394051"
+         x="30.914499"
+         y="87.591072"
+         ry="6.8085499" />
+      <rect
+         style="fill:#cc0000;fill-rule:evenodd;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect4"
+         width="34.962826"
+         height="33.858734"
+         x="25.762081"
+         y="64.03717"
+         ry="6.8085499" />
+      <circle
+         style="fill:#000000;fill-rule:evenodd;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path6"
+         cx="52.720261"
+         cy="76.090149"
+         r="3.9563196" />
+      <circle
+         style="fill:#000000;fill-rule:evenodd;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="circle6"
+         cx="52.720261"
+         cy="76.090149"
+         r="3.9563196" />
+      <circle
+         style="fill:#000000;fill-rule:evenodd;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="circle7"
+         cx="40.207249"
+         cy="76.090149"
+         r="3.9563196" />
+      <circle
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path8"
+         cx="46.003716"
+         cy="43.243492"
+         r="4.6003718" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="55.081882mm"
+   height="37.47599mm"
+   viewBox="0 0 55.081882 37.47599"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-105.304,-190.99851)">
+    <g
+       id="g9"
+       transform="rotate(61.970515,-32.654283,163.72339)">
+      <rect
+         style="fill:#404040;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect8"
+         width="5.7044611"
+         height="26.49814"
+         x="85.198891"
+         y="44.531597"
+         ry="2.8522305" />
+      <ellipse
+         style="fill:#404040;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path9"
+         cx="88.327133"
+         cy="28.798326"
+         rx="15.45725"
+         ry="17.205389" />
+    </g>
+  </g>
+</svg>
