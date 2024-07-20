@@ -41,7 +41,7 @@ lock_rotation = true
 freeze = true
 
 [node name="Racket" parent="Hand" instance=ExtResource("1_wx2k5")]
-position = Vector2(144, 28)
+position = Vector2(144, 27)
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_vyegu")
 
@@ -66,15 +66,15 @@ shape = SubResource("RectangleShape2D_b2wsc")
 
 [node name="JetParticle" type="CPUParticles2D" parent="."]
 show_behind_parent = true
-position = Vector2(0, 129)
+position = Vector2(0, 120)
 emitting = false
 amount = 20
 lifetime = 0.3
 one_shot = true
 speed_scale = 2.0
 texture = ExtResource("4_8mxar")
-scale_amount_min = 0.5
-scale_amount_max = 0.5
+scale_amount_min = 0.4
+scale_amount_max = 0.4
 color_ramp = SubResource("Gradient_bj5fg")
 
 [connection signal="body_entered" from="HitCollision" to="." method="_on_hit_collision_body_entered"]

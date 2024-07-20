@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Racket.gd" id="1_c6dyd"]
 [ext_resource type="Texture2D" uid="uid://cs6s62thpf5jb" path="res://Art/Racket.svg" id="1_us0ev"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1xay"]
-size = Vector2(152, 80)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3gat1"]
+radius = 62.0
 
 [node name="Racket" type="RigidBody2D"]
 collision_layer = 2
@@ -19,5 +19,7 @@ script = ExtResource("1_c6dyd")
 texture = ExtResource("1_us0ev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(38, -1)
-shape = SubResource("RectangleShape2D_c1xay")
+position = Vector2(43, -1)
+shape = SubResource("CircleShape2D_3gat1")
+one_way_collision = true
+one_way_collision_margin = 90.7

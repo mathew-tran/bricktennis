@@ -11,6 +11,8 @@ point_count = 3
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.470588)
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
+z_index = 20
+z_as_relative = false
 emitting = false
 amount = 1
 one_shot = true

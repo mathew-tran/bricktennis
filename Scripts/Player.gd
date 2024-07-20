@@ -3,7 +3,7 @@ extends RigidBody2D
 var MoveSpeed = 800
 var JetpackSpeed = 300
 
-var MaxSpeed = 800
+var MaxSpeed = 950
 
 var bCanShoot = true
 
@@ -12,7 +12,7 @@ enum DIRECTION {
 	RIGHT
 }
 
-var DefaultHandRotation = 45
+var DefaultHandRotation = 35
 var TargetRotation = 120
 
 var bCanMove = true
@@ -21,7 +21,25 @@ var bCanMove = true
 @onready var PlayerSprite = $Sprite2D
 @export var PlayerDirection : DIRECTION
 
+var bIsAlive = true
+
+func _ready():
+	EventManager.UpdatePlayerHealth.connect(OnUpdatePlayerHealth)
+
+
+func OnUpdatePlayerHealth(amount):
+	if bIsAlive:
+		if amount == 0:
+			bIsAlive = false
+			EventManager.PlayerDeath.emit()
+
+
 func _process(delta):
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+
+	if bIsAlive == false:
+		return
 
 	if bCanMove:
 		var velocity = Vector2.ZERO
@@ -67,6 +85,9 @@ func UpdateRacket():
 				$Hand.rotation_degrees = DefaultHandRotation
 				PlayerSprite.flip_h = false
 func _input(event):
+	if bIsAlive == false:
+		return
+
 	if event.is_action_released("shoot"):
 		MoveRacket()
 
@@ -80,8 +101,8 @@ func MoveRacket():
 		targetDegrees = -targetDegrees
 
 	var tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .15)
-	tween.set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .25)
+	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	tween = get_tree().create_tween()
 	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .05)
@@ -97,7 +118,8 @@ func _on_hit_collision_body_entered(body):
 		bCanMove = false
 		lock_rotation = false
 		modulate = Color.DARK_RED
-
+		EventManager.RewardPoints.emit(5, global_position)
+		EventManager.PlayerHit.emit()
 		var direction = Vector2.UP
 
 		var sanitizePlayerPosition = global_position
@@ -112,12 +134,15 @@ func _on_hit_collision_body_entered(body):
 
 		await timer.timeout
 
-		lock_rotation = true
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, "rotation_degrees", 0, .1)
-		await tween.finished
-		bCanMove = true
-		modulate = Color.WHITE
+		if bIsAlive:
+			lock_rotation = true
+			var tween = get_tree().create_tween()
+			tween.tween_property(self, "rotation_degrees", 0, .1)
+			await tween.finished
+			bCanMove = true
+			modulate = Color.WHITE
+		else:
+			self_modulate = Color.BLACK
 
 func SanitizeDirection(vector: Vector2) -> Vector2:
 		if vector.x > 0:

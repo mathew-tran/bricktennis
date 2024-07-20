@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl8s7sgb3th6r"]
+[gd_scene load_steps=7 format=3 uid="uid://bl8s7sgb3th6r"]
 
 [ext_resource type="Texture2D" uid="uid://doftsm7yu3cen" path="res://Art/Ball.svg" id="1_2ip2b"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_dug80"]
+[ext_resource type="Texture2D" uid="uid://fk0hi32nae0w" path="res://Art/BallParticle.svg" id="3_qdwdp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_obai6"]
-friction = 0.1
-bounce = 1.0
+friction = 0.5
+bounce = 0.9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_isuox"]
 radius = 32.0156
+
+[sub_resource type="Gradient" id="Gradient_drdv8"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2(553, 150)
@@ -18,6 +22,8 @@ physics_material_override = SubResource("PhysicsMaterial_obai6")
 gravity_scale = 2.5
 sleeping = true
 continuous_cd = 2
+max_contacts_reported = 1
+contact_monitor = true
 linear_damp_mode = 1
 linear_damp = 0.1
 script = ExtResource("1_dug80")
@@ -33,8 +39,10 @@ one_way_collision_margin = 0.0
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 show_behind_parent = true
 amount = 50
-lifetime = 0.4
-speed_scale = 5.0
+lifetime = 1.5
+speed_scale = 10.0
+texture = ExtResource("3_qdwdp")
 gravity = Vector2(0, 0)
-scale_amount_min = 20.0
-scale_amount_max = 20.0
+color_ramp = SubResource("Gradient_drdv8")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkj1ns1u1ehsf"]
+[gd_scene load_steps=7 format=3 uid="uid://dkj1ns1u1ehsf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ScoreLabel.gd" id="1_y4fh5"]
+[ext_resource type="Script" path="res://Scripts/HealthContainer.gd" id="2_li4tp"]
+[ext_resource type="Texture2D" uid="uid://dbr2xqf056073" path="res://Art/PlayerLives.svg" id="2_vdshe"]
+[ext_resource type="PackedScene" uid="uid://bv8b3tmt6lxxi" path="res://Prefab/ContinueScreen.tscn" id="4_vism2"]
+[ext_resource type="PackedScene" uid="uid://btefyo531y5vd" path="res://Prefab/GameOverScreen.tscn" id="5_71c0x"]
+[ext_resource type="PackedScene" uid="uid://fuxf6h0wubhd" path="res://Prefab/PauseScreen.tscn" id="6_40doq"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -18,3 +23,43 @@ theme_override_font_sizes/font_size = 40
 text = "2000"
 horizontal_alignment = 2
 script = ExtResource("1_y4fh5")
+
+[node name="HealthContainer" type="HBoxContainer" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 144.0
+offset_bottom = 140.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+script = ExtResource("2_li4tp")
+
+[node name="TextureRect" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("2_vdshe")
+
+[node name="TextureRect2" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("2_vdshe")
+
+[node name="TextureRect3" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("2_vdshe")
+
+[node name="TextureRect4" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("2_vdshe")
+
+[node name="TextureRect5" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("2_vdshe")
+
+[node name="ContinueScreen" parent="." instance=ExtResource("4_vism2")]
+visible = false
+
+[node name="GameOverScreen" parent="." instance=ExtResource("5_71c0x")]
+process_mode = 3
+visible = false
+pivot_offset = Vector2(960, 540)
+
+[node name="PauseScreen" parent="." instance=ExtResource("6_40doq")]
+visible = false
