@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="17.111876mm"
-   height="17.111876mm"
-   viewBox="0 0 17.111876 17.111876"
+   width="20.505756mm"
+   height="20.505774mm"
+   viewBox="0 0 20.505756 20.505774"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -38,9 +38,27 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-170.91709,-173.68351)">
+     transform="translate(-169.17391,-172.03233)">
     <circle
-       style="fill:#003399;fill-rule:evenodd;stroke:#000000;stroke-width:0.350338;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.934122;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="circle31"
+       cx="179.42679"
+       cy="182.28522"
+       r="9.7858229"
+       inkscape:export-filename="Ball.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.850296;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="circle30"
+       cx="179.49591"
+       cy="182.26233"
+       r="8.9076614"
+       inkscape:export-filename="Ball.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#bfbfbf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
        id="path17"
        cx="179.47302"
        cy="182.23944"
@@ -48,15 +66,9 @@
        inkscape:export-filename="Ball.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <circle
-       style="fill:#3366cc;fill-rule:evenodd;stroke:none;stroke-width:0.659592;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
-       id="path29"
-       cx="184.16798"
-       cy="186.46049"
-       r="1.1586381" />
     <path
-       id="circle29"
-       style="fill:#002266;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.345544;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
-       d="m 179.43889,173.91438 a 8.2660948,8.2660948 0 0 0 -8.26625,8.26557 8.2660948,8.2660948 0 0 0 3.08488,6.42125 8.2660948,8.2660948 0 0 1 -1.22239,-4.30459 8.2660948,8.2660948 0 0 1 8.26626,-8.26624 8.2660948,8.2660948 0 0 1 5.18272,1.82886 8.2660948,8.2660948 0 0 0 -7.04522,-3.94485 z" />
+       id="circle32"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.682943;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       d="m 185.3038,178.05579 a 7.1544814,7.1544814 0 0 1 0.48349,2.57898 7.1544814,7.1544814 0 0 1 -7.15457,7.15459 7.1544814,7.1544814 0 0 1 -5.63527,-2.7744 7.1544814,7.1544814 0 0 0 6.65608,4.58091 7.1544814,7.1544814 0 0 0 7.15459,-7.15458 7.1544814,7.1544814 0 0 0 -1.50432,-4.3855 z" />
   </g>
 </svg>

@@ -46,6 +46,12 @@ shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Default"
+2d_physics/layer_2="Racket"
+2d_physics/layer_4="Ball"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0.55333, 0.470921, 1)

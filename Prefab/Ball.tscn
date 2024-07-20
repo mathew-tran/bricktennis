@@ -8,14 +8,14 @@ friction = 0.1
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_isuox"]
-radius = 27.074
+radius = 32.0156
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2(553, 150)
+collision_layer = 9
 collision_mask = 3
-mass = 3.0
 physics_material_override = SubResource("PhysicsMaterial_obai6")
-gravity_scale = 3.0
+gravity_scale = 2.5
 sleeping = true
 continuous_cd = 2
 linear_damp_mode = 1
@@ -29,3 +29,12 @@ texture = ExtResource("1_2ip2b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_isuox")
 one_way_collision_margin = 0.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+amount = 50
+lifetime = 0.4
+speed_scale = 5.0
+gravity = Vector2(0, 0)
+scale_amount_min = 20.0
+scale_amount_max = 20.0

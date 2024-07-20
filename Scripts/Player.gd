@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var MoveSpeed = 80000
+var MoveSpeed = 800
 
 var MaxSpeed = 600
 
@@ -13,28 +13,37 @@ enum DIRECTION {
 
 var DefaultHandRotation = 45
 var TargetRotation = 120
+
+var bCanMove = true
+
 @onready var Racket = $Hand/Racket
 @onready var PlayerSprite = $Sprite2D
 @export var PlayerDirection : DIRECTION
 func _process(delta):
-	var velocity = Vector2.ZERO
 
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= MoveSpeed
-		PlayerDirection = DIRECTION.LEFT
+	if bCanMove:
+		var velocity = Vector2.ZERO
 
-	if Input.is_action_pressed("move_right"):
-		velocity.x += MoveSpeed
-		PlayerDirection = DIRECTION.RIGHT
 
-	apply_impulse(velocity *delta)
+		if Input.is_action_pressed("move_left"):
+			velocity.x -= MoveSpeed
+			PlayerDirection = DIRECTION.LEFT
 
+		if Input.is_action_pressed("move_right"):
+			velocity.x += MoveSpeed
+			PlayerDirection = DIRECTION.RIGHT
+
+		apply_impulse(velocity *delta * 400)
+		UpdateRacket()
+
+
+func _physics_process(delta):
 	var bLeft = linear_velocity.x <= 0
 	if abs(linear_velocity.x) > MaxSpeed:
 		linear_velocity.x = MaxSpeed
 		if bLeft:
 			linear_velocity.x = -linear_velocity.x
-	UpdateRacket()
+
 
 
 func UpdateRacket():
@@ -62,10 +71,45 @@ func MoveRacket():
 		targetDegrees = -targetDegrees
 
 	var tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .3)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .25)
 	tween.set_trans(Tween.TRANS_LINEAR)
 	await tween.finished
 	tween = get_tree().create_tween()
 	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
 	await tween.finished
 	bCanShoot = true
+
+
+func _on_hit_collision_body_entered(body):
+	print(body)
+	if body is Ball:
+		if bCanMove == false:
+			return
+		bCanMove = false
+		lock_rotation = false
+		modulate = Color.DARK_RED
+		var sanitizePlayerPosition = global_position
+		var direction = (global_position - body.global_position).normalized()
+		direction = SanitizeDirection(direction)
+		apply_impulse(direction * MoveSpeed * 40)
+		if direction == Vector2.RIGHT:
+			angular_velocity += 10
+		else:
+			angular_velocity -= 10
+		var timer = get_tree().create_timer(randf_range(.8, 1.2))
+
+		await timer.timeout
+
+		lock_rotation = true
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "rotation_degrees", 0, .1)
+		await tween.finished
+		bCanMove = true
+		modulate = Color.WHITE
+
+func SanitizeDirection(vector: Vector2) -> Vector2:
+		if vector.x > 0:
+			return Vector2.RIGHT  # Right
+		else:
+			return Vector2.LEFT  # Left
+
