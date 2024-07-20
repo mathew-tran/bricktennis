@@ -23,10 +23,23 @@ var bCanMove = true
 
 var bIsAlive = true
 
+var StartPosition = Vector2.ZERO
+
 func _ready():
 	EventManager.UpdatePlayerHealth.connect(OnUpdatePlayerHealth)
+	EventManager.NewRoundStart.connect(OnNewRoundStart)
+	StartPosition = global_position
 
-
+func OnNewRoundStart():
+	freeze = true
+	$HitCollision.monitoring = false
+	modulate = Color(20,20,20,.1)
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "global_position", StartPosition, .5)
+	await tween.finished
+	modulate = Color.WHITE
+	$HitCollision.monitoring = true
+	freeze = false
 func OnUpdatePlayerHealth(amount):
 	if bIsAlive:
 		if amount == 0:

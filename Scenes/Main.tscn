@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3u52pew66m5c"]
+[gd_scene load_steps=6 format=3 uid="uid://d3u52pew66m5c"]
 
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
 [ext_resource type="PackedScene" uid="uid://cn4c8ce1g64x" path="res://Prefab/Player.tscn" id="3_id3je"]
 [ext_resource type="PackedScene" uid="uid://bl8s7sgb3th6r" path="res://Prefab/Ball.tscn" id="4_jg5su"]
-[ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="5_h84xd"]
 [ext_resource type="PackedScene" uid="uid://dkj1ns1u1ehsf" path="res://Prefab/PlayerUI.tscn" id="6_n6jnf"]
 [ext_resource type="PackedScene" uid="uid://deiyctrhgfslv" path="res://Prefab/GameManager.tscn" id="7_sl4s0"]
 
@@ -30,34 +29,14 @@ rotation = -1.5708
 scale = Vector2(4, 4)
 
 [node name="Ball" parent="." instance=ExtResource("4_jg5su")]
-position = Vector2(936, 800)
-
-[node name="Grid" type="Node" parent="."]
-
-[node name="Brick" parent="Grid" instance=ExtResource("5_h84xd")]
-position = Vector2(1080, 520)
-
-[node name="Brick2" parent="Grid" instance=ExtResource("5_h84xd")]
-position = Vector2(1224, 520)
-
-[node name="Brick3" parent="Grid" instance=ExtResource("5_h84xd")]
-position = Vector2(1368, 520)
-
-[node name="Brick4" parent="Grid" instance=ExtResource("5_h84xd")]
-position = Vector2(1368, 600)
-
-[node name="Brick5" parent="Grid" instance=ExtResource("5_h84xd")]
-position = Vector2(1224, 600)
-
-[node name="Brick6" parent="Grid" instance=ExtResource("5_h84xd")]
-position = Vector2(1080, 600)
+position = Vector2(1008, 80)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 513)
 zoom = Vector2(0.9, 0.9)
 
 [node name="Player" parent="." instance=ExtResource("3_id3je")]
-position = Vector2(612, 880)
+position = Vector2(1008, 920)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_n6jnf")]
 

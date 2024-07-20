@@ -25,11 +25,12 @@ horizontal_alignment = 2
 script = ExtResource("1_y4fh5")
 
 [node name="HealthContainer" type="HBoxContainer" parent="."]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 144.0
-offset_bottom = 140.0
+offset_left = -182.0
+offset_top = -30.0
+offset_right = 568.0
+offset_bottom = 107.0
 scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(375, 68.5)
 theme_override_constants/separation = 10
 script = ExtResource("2_li4tp")
 

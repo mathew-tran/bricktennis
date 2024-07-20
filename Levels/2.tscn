@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqcrvp1tr6o3o"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_gg1c1"]
+[ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="2_nqpjy"]
+
+[node name="Grid" type="Panel"]
+custom_minimum_size = Vector2(1800, 800)
+script = ExtResource("1_gg1c1")
+metadata/_edit_lock_ = true
+
+[node name="Brick" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1128, 520)
+
+[node name="Brick2" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1560, 520)
+
+[node name="Brick7" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(984, 520)
+
+[node name="Brick8" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(840, 520)
+
+[node name="Brick9" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(696, 520)
+
+[node name="Brick10" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(552, 520)
+
+[node name="Brick11" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(408, 520)
+
+[node name="Brick12" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(264, 520)
+
+[node name="Brick13" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(120, 520)
+
+[node name="Brick14" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1704, 520)
+
+[node name="Brick3" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1416, 520)
+
+[node name="Brick4" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1416, 600)
+
+[node name="Brick5" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1272, 600)
+
+[node name="Brick6" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1128, 600)

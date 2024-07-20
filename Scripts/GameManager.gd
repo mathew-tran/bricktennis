@@ -6,12 +6,38 @@ var Combo = 0
 
 var DefaultPointPosition = Vector2(1800,100)
 @onready var PointTextClass = preload("res://Prefab/PointText.tscn")
+
+var PointsToNextLife = 500
+
+var CurrentPointsToLife = 0
+
+var Levels = [1,2]
 func _ready():
 	EventManager.RewardPoints.connect(GivePoints)
+	SpawnNextLevel()
+	CurrentPointsToLife = PointsToNextLife
+
+func SpawnNextLevel():
+	if Levels.size() > 0:
+		var instance = load("res://Levels/" + str(Levels[0]) + ".tscn").instantiate()
+		add_child(instance)
+		instance.global_position.x += 70
+		Levels.pop_front()
+		instance.LevelComplete.connect(OnLevelComplete)
+
+func OnLevelComplete():
+	SpawnNextLevel()
+	EventManager.NewRoundStart.emit()
 
 func AddPointsToTotal(amount):
 	Points += amount
 	EventManager.PointUpdate.emit(Points)
+
+	CurrentPointsToLife -= amount
+	if CurrentPointsToLife <= 0:
+		PointsToNextLife += 1000
+		CurrentPointsToLife = PointsToNextLife
+		EventManager.AddPlayerHealth.emit()
 
 func GivePoints(amount, pointPosition):
 	var newAmount = round(amount * Multiplier)

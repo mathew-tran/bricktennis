@@ -10,6 +10,7 @@ size = Vector2(135, 70)
 [node name="BrickPurple" type="StaticBody2D"]
 collision_mask = 9
 script = ExtResource("1_sm1ln")
+PointsGained = 50
 
 [node name="Area2D" type="Area2D" parent="."]
 
