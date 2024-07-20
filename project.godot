@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventManager="*res://Scripts/AutoLoad/EventManager.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -59,4 +63,4 @@ jetpack={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0.55333, 0.470921, 1)
+environment/defaults/default_clear_color=Color(0.0335753, 0.0707763, 0.288766, 1)

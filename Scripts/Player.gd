@@ -3,7 +3,7 @@ extends RigidBody2D
 var MoveSpeed = 800
 var JetpackSpeed = 300
 
-var MaxSpeed = 600
+var MaxSpeed = 800
 
 var bCanShoot = true
 
@@ -20,6 +20,7 @@ var bCanMove = true
 @onready var Racket = $Hand/Racket
 @onready var PlayerSprite = $Sprite2D
 @export var PlayerDirection : DIRECTION
+
 func _process(delta):
 
 	if bCanMove:
@@ -29,13 +30,17 @@ func _process(delta):
 		if Input.is_action_pressed("move_left"):
 			velocity.x -= MoveSpeed
 			PlayerDirection = DIRECTION.LEFT
-
-		if Input.is_action_pressed("move_right"):
+			PlayerSprite.rotation_degrees = -10
+		elif Input.is_action_pressed("move_right"):
 			velocity.x += MoveSpeed
 			PlayerDirection = DIRECTION.RIGHT
+			PlayerSprite.rotation_degrees = 10
+		else:
+			PlayerSprite.rotation_degrees = 0
 
 		if Input.is_action_pressed("jetpack"):
 			velocity.y -= JetpackSpeed
+			$JetParticle.emitting = true
 
 		apply_impulse(velocity *delta * 400)
 		UpdateRacket()
@@ -79,7 +84,7 @@ func MoveRacket():
 	tween.set_trans(Tween.TRANS_LINEAR)
 	await tween.finished
 	tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
+	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .05)
 	await tween.finished
 	bCanShoot = true
 

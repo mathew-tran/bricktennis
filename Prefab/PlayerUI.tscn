@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkj1ns1u1ehsf"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ScoreLabel.gd" id="1_y4fh5"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -525.0
+offset_top = 20.0
+offset_right = -25.0
+offset_bottom = 43.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "2000"
+horizontal_alignment = 2
+script = ExtResource("1_y4fh5")

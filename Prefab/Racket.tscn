@@ -16,7 +16,6 @@ freeze_mode = 1
 script = ExtResource("1_c6dyd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.5)
 texture = ExtResource("1_us0ev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

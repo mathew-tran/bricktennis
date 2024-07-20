@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3u52pew66m5c"]
+[gd_scene load_steps=8 format=3 uid="uid://d3u52pew66m5c"]
 
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
 [ext_resource type="PackedScene" uid="uid://cn4c8ce1g64x" path="res://Prefab/Player.tscn" id="3_id3je"]
 [ext_resource type="PackedScene" uid="uid://bl8s7sgb3th6r" path="res://Prefab/Ball.tscn" id="4_jg5su"]
 [ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="5_h84xd"]
 [ext_resource type="PackedScene" uid="uid://dr6xkalt84ha0" path="res://Prefab/BrickPurple.tscn" id="5_vce5a"]
+[ext_resource type="PackedScene" uid="uid://dkj1ns1u1ehsf" path="res://Prefab/PlayerUI.tscn" id="6_n6jnf"]
+[ext_resource type="PackedScene" uid="uid://deiyctrhgfslv" path="res://Prefab/GameManager.tscn" id="7_sl4s0"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -92,3 +94,7 @@ position = Vector2(1069, 423)
 
 [node name="BrickPurple4" parent="." instance=ExtResource("5_vce5a")]
 position = Vector2(1069, 365)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_n6jnf")]
+
+[node name="GameManager" parent="." instance=ExtResource("7_sl4s0")]

@@ -1,15 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn4c8ce1g64x"]
+[gd_scene load_steps=10 format=3 uid="uid://cn4c8ce1g64x"]
 
 [ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="1_cfaw8"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_n0p7j"]
 [ext_resource type="PackedScene" uid="uid://dj5amtiw3t0ai" path="res://Prefab/Racket.tscn" id="1_wx2k5"]
+[ext_resource type="Texture2D" uid="uid://d1l5w241lv6el" path="res://Art/JetParticle.svg" id="4_8mxar"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnx5s"]
 rough = true
 bounce = 0.1
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vyegu"]
+bounce = 11.55
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_727eo"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wsc"]
 size = Vector2(130, 191)
+
+[sub_resource type="Gradient" id="Gradient_bj5fg"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.333333)
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(410, 319)
@@ -20,25 +29,52 @@ lock_rotation = true
 script = ExtResource("1_n0p7j")
 metadata/_edit_group_ = true
 
-[node name="Hand" type="Node2D" parent="."]
-rotation = 0.598648
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../Hand")
+node_b = NodePath("../Hand/Racket")
+
+[node name="Hand" type="RigidBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+sleeping = true
+lock_rotation = true
+freeze = true
 
 [node name="Racket" parent="Hand" instance=ExtResource("1_wx2k5")]
-position = Vector2(115, 28)
+position = Vector2(144, 28)
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_vyegu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand"]
+shape = SubResource("CircleShape2D_727eo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cfaw8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 46)
+position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_b2wsc")
 
 [node name="HitCollision" type="Area2D" parent="."]
+position = Vector2(0, -7)
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitCollision"]
 position = Vector2(0, 46)
 shape = SubResource("RectangleShape2D_b2wsc")
+
+[node name="JetParticle" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 129)
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+speed_scale = 2.0
+texture = ExtResource("4_8mxar")
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_bj5fg")
 
 [connection signal="body_entered" from="HitCollision" to="." method="_on_hit_collision_body_entered"]
