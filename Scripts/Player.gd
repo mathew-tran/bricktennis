@@ -40,7 +40,9 @@ func OnNewRoundStart():
 
 	tween.tween_property(self, "global_position", StartPosition, .8)
 	var tween2 = get_tree().create_tween()
-	tween2.tween_property(self, "rotation_degrees", 4320, 1.5)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween2.tween_property(self, "rotation_degrees", 360, .8)
+	tween.set_trans(Tween.TRANS_QUAD)
 
 
 	await tween2.finished
