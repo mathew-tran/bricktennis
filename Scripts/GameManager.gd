@@ -17,6 +17,7 @@ func _ready():
 	SpawnNextLevel()
 	CurrentPointsToLife = PointsToNextLife
 
+
 func SpawnNextLevel():
 	if Levels.size() > 0:
 		var instance = load("res://Levels/" + str(Levels[0]) + ".tscn").instantiate()
@@ -26,6 +27,7 @@ func SpawnNextLevel():
 		instance.LevelComplete.connect(OnLevelComplete)
 
 func OnLevelComplete():
+	EventManager.RewardPoints.emit(200)
 	SpawnNextLevel()
 	EventManager.NewRoundStart.emit()
 

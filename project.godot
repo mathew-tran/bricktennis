@@ -78,4 +78,4 @@ pause={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.0335753, 0.0707763, 0.288766, 1)
+environment/defaults/default_clear_color=Color(0.00205695, 0, 0.357293, 1)

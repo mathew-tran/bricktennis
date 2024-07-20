@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cn4c8ce1g64x"]
+[gd_scene load_steps=11 format=3 uid="uid://cn4c8ce1g64x"]
 
 [ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="1_cfaw8"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_n0p7j"]
@@ -15,7 +15,10 @@ bounce = 11.55
 [sub_resource type="CircleShape2D" id="CircleShape2D_727eo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wsc"]
-size = Vector2(130, 191)
+size = Vector2(80, 158.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq06a"]
+size = Vector2(130, 130)
 
 [sub_resource type="Gradient" id="Gradient_bj5fg"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.333333)
@@ -24,8 +27,9 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.333333)
 position = Vector2(410, 319)
 mass = 20.0
 physics_material_override = SubResource("PhysicsMaterial_cnx5s")
-gravity_scale = 4.0
+gravity_scale = 2.0
 lock_rotation = true
+linear_damp = 2.5
 script = ExtResource("1_n0p7j")
 metadata/_edit_group_ = true
 
@@ -52,17 +56,17 @@ shape = SubResource("CircleShape2D_727eo")
 texture = ExtResource("1_cfaw8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 39)
+position = Vector2(0, 55.25)
 shape = SubResource("RectangleShape2D_b2wsc")
 
 [node name="HitCollision" type="Area2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -46)
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitCollision"]
-position = Vector2(0, 46)
-shape = SubResource("RectangleShape2D_b2wsc")
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_yq06a")
 
 [node name="JetParticle" type="CPUParticles2D" parent="."]
 show_behind_parent = true

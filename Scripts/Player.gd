@@ -22,6 +22,7 @@ var bCanMove = true
 @export var PlayerDirection : DIRECTION
 
 var bIsAlive = true
+var bCanBeHurt = true
 
 var StartPosition = Vector2.ZERO
 
@@ -32,14 +33,22 @@ func _ready():
 
 func OnNewRoundStart():
 	freeze = true
+	bCanBeHurt = false
 	$HitCollision.monitoring = false
 	modulate = Color(20,20,20,.1)
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "global_position", StartPosition, .5)
-	await tween.finished
+
+	tween.tween_property(self, "global_position", StartPosition, .8)
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, "rotation_degrees", 4320, 1.5)
+
+
+	await tween2.finished
 	modulate = Color.WHITE
 	$HitCollision.monitoring = true
 	freeze = false
+	bCanBeHurt = true
+
 func OnUpdatePlayerHealth(amount):
 	if bIsAlive:
 		if amount == 0:
@@ -125,8 +134,11 @@ func MoveRacket():
 
 func _on_hit_collision_body_entered(body):
 	print(body)
+
 	if body is Ball:
 		if bCanMove == false:
+			return
+		if bCanBeHurt == false:
 			return
 		bCanMove = false
 		lock_rotation = false
