@@ -1,13 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn4c8ce1g64x"]
+[gd_scene load_steps=6 format=3 uid="uid://cn4c8ce1g64x"]
 
 [ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="1_cfaw8"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_n0p7j"]
+[ext_resource type="PackedScene" uid="uid://dj5amtiw3t0ai" path="res://Prefab/Racket.tscn" id="1_wx2k5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnx5s"]
+rough = true
+bounce = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wsc"]
 size = Vector2(120, 186)
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(410, 319)
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_cnx5s")
+lock_rotation = true
+script = ExtResource("1_n0p7j")
 metadata/_edit_group_ = true
+
+[node name="Hand" type="Node2D" parent="."]
+rotation = 0.598648
+
+[node name="Racket" parent="Hand" instance=ExtResource("1_wx2k5")]
+position = Vector2(115, 28)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cfaw8")

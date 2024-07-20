@@ -2,10 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
 [ext_resource type="PackedScene" uid="uid://bacj4ugsak7hf" path="res://Prefab/Boundary.tscn" id="2_543uk"]
-[ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="3_8rn24"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wsc"]
-size = Vector2(120, 186)
+[ext_resource type="PackedScene" uid="uid://cn4c8ce1g64x" path="res://Prefab/Player.tscn" id="3_id3je"]
+[ext_resource type="PackedScene" uid="uid://bl8s7sgb3th6r" path="res://Prefab/Ball.tscn" id="4_jg5su"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,13 +30,6 @@ position = Vector2(1850, 1493)
 rotation = -1.5708
 scale = Vector2(4, 1)
 
-[node name="Player" type="RigidBody2D" parent="."]
-position = Vector2(410, 319)
-metadata/_edit_group_ = true
+[node name="Player" parent="." instance=ExtResource("3_id3je")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_8rn24")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 46)
-shape = SubResource("RectangleShape2D_b2wsc")
+[node name="Ball" parent="." instance=ExtResource("4_jg5su")]
