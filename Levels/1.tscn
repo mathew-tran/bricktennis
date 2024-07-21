@@ -1,80 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2rrt45a8j4ef"]
+[gd_scene load_steps=4 format=3 uid="uid://cbistoauam1ii"]
 
-[ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="1_tpnxj"]
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_vphot"]
-[ext_resource type="PackedScene" uid="uid://dr6xkalt84ha0" path="res://Prefab/BrickPurple.tscn" id="3_7fvgg"]
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_mrfdb"]
+[ext_resource type="PackedScene" uid="uid://c3hi1rabn286t" path="res://Prefab/BrickGreen.tscn" id="2_dokq1"]
+[ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="2_dw065"]
 
 [node name="Grid" type="Panel"]
 custom_minimum_size = Vector2(1800, 800)
-script = ExtResource("1_vphot")
-ColorToTweenTo = Color(0, 0, 0.870588, 1)
+script = ExtResource("1_mrfdb")
+ColorToTweenTo = Color(0.248904, 0.119241, 0.58213, 1)
 metadata/_edit_lock_ = true
 
-[node name="Brick" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(828, 380)
+[node name="BrickGreen" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(72, 340)
 
-[node name="Brick7" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(684, 380)
+[node name="BrickGreen2" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(72, 420)
 
-[node name="Brick8" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1260, 380)
+[node name="BrickGreen3" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(72, 500)
 
-[node name="Brick9" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1116, 300)
+[node name="BrickGreen4" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(1728, 340)
 
-[node name="Brick10" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(828, 300)
+[node name="BrickGreen5" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(1728, 420)
 
-[node name="Brick2" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(972, 380)
+[node name="BrickGreen6" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(1728, 500)
 
-[node name="Brick3" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1116, 380)
+[node name="Brick" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(216, 420)
 
-[node name="Brick5" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(972, 460)
+[node name="Brick2" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(1584, 420)
 
-[node name="Brick6" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(828, 460)
+[node name="Brick3" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(1728, 580)
 
-[node name="Brick11" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1116, 460)
-
-[node name="Brick12" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(972, 540)
-
-[node name="Brick13" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1404, 300)
-
-[node name="Brick14" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(540, 300)
-
-[node name="Brick15" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(540, 220)
-
-[node name="Brick16" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(684, 220)
-
-[node name="Brick17" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(828, 220)
-
-[node name="Brick18" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1116, 220)
-
-[node name="Brick19" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1260, 220)
-
-[node name="Brick20" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1404, 220)
-
-[node name="Brick21" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(1260, 140)
-
-[node name="Brick22" parent="." instance=ExtResource("1_tpnxj")]
-position = Vector2(684, 140)
-
-[node name="BrickPurple" parent="." instance=ExtResource("3_7fvgg")]
-position = Vector2(1260, 300)
-
-[node name="BrickPurple2" parent="." instance=ExtResource("3_7fvgg")]
-position = Vector2(684, 300)
+[node name="Brick4" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(72, 580)

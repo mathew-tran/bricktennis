@@ -22,7 +22,7 @@ func SpawnNextLevel():
 	if Levels.size() > 0:
 		var instance = load("res://Levels/" + str(Levels[0]) + ".tscn").instantiate()
 		add_child(instance)
-		instance.global_position.x += 70
+		instance.global_position.x += 65
 		Levels.pop_front()
 		instance.LevelComplete.connect(OnLevelComplete)
 
