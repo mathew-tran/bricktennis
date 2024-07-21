@@ -77,7 +77,6 @@ func _process(delta):
 	if bCanMove:
 		var velocity = Vector2.ZERO
 
-
 		if Input.is_action_pressed("move_left"):
 			velocity.x -= MoveSpeed
 			PlayerDirection = DIRECTION.LEFT
@@ -93,6 +92,11 @@ func _process(delta):
 			velocity.y -= JetpackSpeed
 			$JetParticle.emitting = true
 			PlayJetpackSound()
+
+		if velocity != Vector2.ZERO:
+			$Sprite2D/ThinkingFace.visible = true
+		else:
+			$Sprite2D/ThinkingFace.visible = false
 
 		apply_impulse(velocity *delta * 400)
 		UpdateRacket()
@@ -120,12 +124,14 @@ func UpdateRacket(bForce = false):
 				PlayerSprite.flip_h = true
 				$Sprite2D/HurtFace.offset.x = -6
 				$Sprite2D/HappyFace.offset.x = -6
+				$Sprite2D/ThinkingFace.offset.x = -6
 			DIRECTION.RIGHT:
 				$Hand.scale = Vector2(1,1)
 				$Hand.rotation_degrees = DefaultHandRotation
 				PlayerSprite.flip_h = false
 				$Sprite2D/HurtFace.offset.x = 6
 				$Sprite2D/HappyFace.offset.x = 6
+				$Sprite2D/ThinkingFace.offset.x = 6
 
 
 
