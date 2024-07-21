@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://de2jnlnc8fvw3"]
+[gd_scene load_steps=7 format=3 uid="uid://de2jnlnc8fvw3"]
 
 [ext_resource type="Texture2D" uid="uid://5vdk4dscxegd" path="res://Art/Brick.svg" id="1_2axqd"]
 [ext_resource type="Script" path="res://Scripts/Brick.gd" id="1_eeq22"]
+[ext_resource type="Material" uid="uid://cbvcffm1mio2w" path="res://Shader/Brick.tres" id="2_pdssi"]
 [ext_resource type="PackedScene" uid="uid://320ja1wtdbl4" path="res://Prefab/BrickParticle.tscn" id="3_yhsgc"]
 [ext_resource type="AudioStream" uid="uid://douqk3ux1eynh" path="res://Audio/SFX/laser2.mp3" id="4_b11c8"]
 
@@ -21,6 +22,7 @@ shape = SubResource("RectangleShape2D_5q150")
 shape = SubResource("RectangleShape2D_5q150")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_pdssi")
 texture = ExtResource("1_2axqd")
 
 [node name="CPUParticles2D" parent="." instance=ExtResource("3_yhsgc")]
