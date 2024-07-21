@@ -13,7 +13,7 @@ func _ready():
 func OnAddPlayerHealth():
 	modulate = Color.GREEN
 	var timer = get_tree().create_timer(.3)
-
+	$"..".play()
 
 	Health += 1
 	if Health >= MaxHealth:

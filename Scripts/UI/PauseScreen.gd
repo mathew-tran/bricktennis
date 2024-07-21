@@ -4,6 +4,11 @@ var bCanUse = true
 func _ready():
 
 	EventManager.PlayerDeath.connect(OnPlayerDeath)
+	EventManager.PlayerWon.connect(OnPlayerWon)
+
+
+func OnPlayerWon():
+	OnPlayerDeath()
 
 
 func OnPlayerDeath():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2p6xklb20ulo"]
+[gd_scene load_steps=17 format=3 uid="uid://c2p6xklb20ulo"]
 
 [ext_resource type="Script" path="res://Scripts/Title.gd" id="1_45ucs"]
 [ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="1_lqkir"]
@@ -9,8 +9,49 @@
 [ext_resource type="AudioStream" uid="uid://2mpf3uw1261d" path="res://Audio/SFX/phaseJump3.mp3" id="5_k7wau"]
 [ext_resource type="Theme" uid="uid://q3v47v5i6o8y" path="res://Themes/ButtonTheme.tres" id="5_lcw7l"]
 [ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="6_x8kao"]
+[ext_resource type="PackedScene" uid="uid://cqkpo1mjldvk6" path="res://Prefab/ResetScore.tscn" id="8_jqsv5"]
 [ext_resource type="PackedScene" uid="uid://dpq7okbeo1ats" path="res://Prefab/Credits.tscn" id="8_wc84v"]
 [ext_resource type="PackedScene" uid="uid://cxwicmi14f386" path="res://Prefab/Controls.tscn" id="9_vdx75"]
+[ext_resource type="PackedScene" uid="uid://duwuql6wwsyh0" path="res://Prefab/HighScore.tscn" id="12_2c4r3"]
+
+[sub_resource type="Animation" id="Animation_t6yus"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, 620)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_i6h0f"]
 resource_name = "animate"
@@ -50,45 +91,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_t6yus"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(864, 620)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/Sprite2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D/AudioStreamPlayer2D:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oarko"]
@@ -141,6 +143,10 @@ rotation = -0.0100789
 position = Vector2(468, 120)
 rotation = -0.0100789
 
+[node name="ResetScore" parent="." instance=ExtResource("8_jqsv5")]
+offset_top = 26.0
+offset_bottom = 114.0
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0xw65")
 autoplay = true
@@ -179,6 +185,12 @@ visible = false
 libraries = {
 "": SubResource("AnimationLibrary_oarko")
 }
+
+[node name="HighScore" parent="." instance=ExtResource("12_2c4r3")]
+offset_left = 36.0
+offset_top = 20.0
+offset_right = 536.0
+offset_bottom = 60.0
 
 [connection signal="button_up" from="VBoxContainer/Button2" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="VBoxContainer/Credits" to="." method="_on_credits_button_up"]

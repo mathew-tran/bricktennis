@@ -52,13 +52,14 @@ func OnNewRoundStart():
 	modulate = Color.WHITE
 	$HitCollision.monitoring = true
 	freeze = false
-	bCanBeHurt = true
+
 
 	var timer = get_tree().create_timer(1)
 	$HappySound.pitch_scale = randf_range(.9, 1.2)
 	$HappySound.play()
 	await timer.timeout
 	$Sprite2D/HappyFace.visible = false
+	bCanBeHurt = true
 
 func OnUpdatePlayerHealth(amount):
 	if bIsAlive:

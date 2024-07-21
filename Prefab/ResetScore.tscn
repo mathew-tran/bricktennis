@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqkpo1mjldvk6"]
+
+[ext_resource type="FontFile" uid="uid://cxrupt8serby5" path="res://Font/TurretRoad-Medium.ttf" id="1_bu0yv"]
+[ext_resource type="Script" path="res://Scripts/ResetScore.gd" id="2_sfkpf"]
+
+[node name="ResetScore" type="Label"]
+offset_left = 324.0
+offset_right = 837.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("1_bu0yv")
+theme_override_font_sizes/font_size = 30
+text = "HOLD \"X\" to reset score"
+script = ExtResource("2_sfkpf")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 0
+offset_top = 41.0
+offset_right = 4.0
+offset_bottom = 68.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

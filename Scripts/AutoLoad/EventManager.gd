@@ -9,3 +9,8 @@ signal NewRoundStart
 
 signal PlayerDeath
 signal BGColorChange(newColor)
+
+signal StageUpdate(level)
+signal PublishHighScore(amount)
+signal ClearScore
+signal PlayerWon

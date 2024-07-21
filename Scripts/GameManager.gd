@@ -11,25 +11,37 @@ var PointsToNextLife = 500
 
 var CurrentPointsToLife = 0
 
-var Levels = [0,1,2]
+var StageLevel = 0
+var Levels = [0,1,2,3,4,5,6,7]
 func _ready():
 	EventManager.RewardPoints.connect(GivePoints)
+	EventManager.PlayerDeath.connect(OnPlayerDeath)
 	SpawnNextLevel()
 	CurrentPointsToLife = PointsToNextLife
 
+
+func OnPlayerDeath():
+	EventManager.PublishHighScore.emit(Points)
 
 func SpawnNextLevel():
 	if Levels.size() > 0:
 		var instance = load("res://Levels/" + str(Levels[0]) + ".tscn").instantiate()
 		add_child(instance)
 		instance.global_position.x += 65
+		instance.global_position.y += 40
 		Levels.pop_front()
 		instance.LevelComplete.connect(OnLevelComplete)
+		StageLevel += 1
+		EventManager.StageUpdate.emit(StageLevel)
+	else:
+		EventManager.PublishHighScore.emit(Points)
+		EventManager.PlayerWon.emit()
 
 func OnLevelComplete():
 	EventManager.RewardPoints.emit(200)
 	SpawnNextLevel()
 	EventManager.NewRoundStart.emit()
+	EventManager.AddPlayerHealth.emit()
 
 func AddPointsToTotal(amount):
 	Points += amount

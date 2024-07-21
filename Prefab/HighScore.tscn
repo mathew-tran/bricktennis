@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://duwuql6wwsyh0"]
+
+[ext_resource type="Script" path="res://Scripts/HighScore.gd" id="1_3sh1a"]
+[ext_resource type="FontFile" uid="uid://c4cd45384fa5g" path="res://Font/TurretRoad-ExtraBold.ttf" id="1_okk0m"]
+
+[node name="HighScore" type="Control"]
+process_mode = 3
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 199.0
+offset_right = 556.0
+offset_bottom = 239.0
+script = ExtResource("1_3sh1a")
+metadata/_edit_group_ = true
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color(0.66779, 0.993845, 1.54018e-06, 1)
+layout_mode = 2
+offset_top = -60.0
+offset_right = 246.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("1_okk0m")
+theme_override_font_sizes/font_size = 46
+text = "NEW!"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_okk0m")
+theme_override_font_sizes/font_size = 46
+text = "HIGHSCORE"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_okk0m")
+theme_override_font_sizes/font_size = 46
+text = "2000"
+horizontal_alignment = 2

@@ -2,11 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://c4cd45384fa5g" path="res://Font/TurretRoad-ExtraBold.ttf" id="1_g8kim"]
 [ext_resource type="Script" path="res://Scripts/UI/ScoreLabel.gd" id="1_y4fh5"]
-[ext_resource type="Script" path="res://Scripts/HealthContainer.gd" id="2_li4tp"]
-[ext_resource type="Texture2D" uid="uid://dbr2xqf056073" path="res://Art/PlayerLives.svg" id="2_vdshe"]
+[ext_resource type="PackedScene" uid="uid://gvi1166dxhav" path="res://Prefab/HealthContainer.tscn" id="4_nucvd"]
 [ext_resource type="PackedScene" uid="uid://bv8b3tmt6lxxi" path="res://Prefab/ContinueScreen.tscn" id="4_vism2"]
 [ext_resource type="PackedScene" uid="uid://btefyo531y5vd" path="res://Prefab/GameOverScreen.tscn" id="5_71c0x"]
 [ext_resource type="PackedScene" uid="uid://fuxf6h0wubhd" path="res://Prefab/PauseScreen.tscn" id="6_40doq"]
+[ext_resource type="Script" path="res://Scripts/StageLabel.gd" id="7_sapk5"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -21,36 +21,7 @@ pivot_offset = Vector2(960, 540)
 [node name="PauseScreen" parent="." instance=ExtResource("6_40doq")]
 visible = false
 
-[node name="HealthContainer" type="HBoxContainer" parent="."]
-process_mode = 3
-offset_left = -174.0
-offset_top = -24.0
-offset_right = 576.0
-offset_bottom = 113.0
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(375, 68.5)
-theme_override_constants/separation = 10
-script = ExtResource("2_li4tp")
-
-[node name="TextureRect" type="TextureRect" parent="HealthContainer"]
-layout_mode = 2
-texture = ExtResource("2_vdshe")
-
-[node name="TextureRect2" type="TextureRect" parent="HealthContainer"]
-layout_mode = 2
-texture = ExtResource("2_vdshe")
-
-[node name="TextureRect3" type="TextureRect" parent="HealthContainer"]
-layout_mode = 2
-texture = ExtResource("2_vdshe")
-
-[node name="TextureRect4" type="TextureRect" parent="HealthContainer"]
-layout_mode = 2
-texture = ExtResource("2_vdshe")
-
-[node name="TextureRect5" type="TextureRect" parent="HealthContainer"]
-layout_mode = 2
-texture = ExtResource("2_vdshe")
+[node name="HealthContainer" parent="." instance=ExtResource("4_nucvd")]
 
 [node name="ScoreLabel" type="Label" parent="."]
 custom_minimum_size = Vector2(500, 0)
@@ -68,3 +39,17 @@ text = "2000
 "
 horizontal_alignment = 2
 script = ExtResource("1_y4fh5")
+
+[node name="StageLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 10.0
+offset_right = 79.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_g8kim")
+theme_override_font_sizes/font_size = 40
+text = "STAGE 1"
+script = ExtResource("7_sapk5")

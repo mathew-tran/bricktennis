@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://6x5scs22geff"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_mrfdb"]
+[ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="2_dw065"]
+[ext_resource type="PackedScene" uid="uid://dr6xkalt84ha0" path="res://Prefab/BrickPurple.tscn" id="3_4bem6"]
+[ext_resource type="PackedScene" uid="uid://c3hi1rabn286t" path="res://Prefab/BrickGreen.tscn" id="3_oeraa"]
+
+[node name="Grid" type="Panel"]
+custom_minimum_size = Vector2(1800, 800)
+script = ExtResource("1_mrfdb")
+ColorToTweenTo = Color(3.00817e-08, 0.203072, 0.12058, 1)
+metadata/_edit_lock_ = true
+
+[node name="Brick" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(756, 280)
+
+[node name="Brick2" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(756, 360)
+
+[node name="Brick3" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(756, 440)
+
+[node name="Brick4" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(900, 440)
+
+[node name="Brick5" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(1044, 440)
+
+[node name="Brick6" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(1044, 360)
+
+[node name="Brick7" parent="." instance=ExtResource("2_dw065")]
+position = Vector2(1044, 280)
+
+[node name="BrickGreen" parent="." instance=ExtResource("3_oeraa")]
+position = Vector2(900, 360)
+
+[node name="BrickGreen2" parent="." instance=ExtResource("3_oeraa")]
+position = Vector2(900, 280)
+
+[node name="BrickPurple" parent="." instance=ExtResource("3_4bem6")]
+position = Vector2(68, 760)
+
+[node name="BrickPurple2" parent="." instance=ExtResource("3_4bem6")]
+position = Vector2(1728, 760)
