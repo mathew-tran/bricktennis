@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://myyqlvgp385a"]
+[gd_scene load_steps=3 format=3 uid="uid://myyqlvgp385a"]
 
 [ext_resource type="Script" path="res://Scripts/UI/PointText.gd" id="1_femsm"]
+[ext_resource type="FontFile" uid="uid://dgdyqypbvqpe5" path="res://Font/TurretRoad-Bold.ttf" id="2_1t4vi"]
 
 [node name="PointText" type="Node2D"]
 script = ExtResource("1_femsm")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 80.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("2_1t4vi")
 theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

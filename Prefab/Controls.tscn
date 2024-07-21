@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxwicmi14f386"]
+
+[ext_resource type="FontFile" uid="uid://dgdyqypbvqpe5" path="res://Font/TurretRoad-Bold.ttf" id="1_bxq87"]
+
+[node name="Controls Label" type="Label"]
+offset_left = 1476.0
+offset_top = 740.0
+offset_right = 1864.0
+offset_bottom = 922.0
+theme_override_fonts/font = ExtResource("1_bxq87")
+theme_override_font_sizes/font_size = 30
+text = "Controls
+Left / Right Arrows - Move
+Up Arrow - Jetpack
+ENTER - Pause
+Z - Action"
+horizontal_alignment = 2

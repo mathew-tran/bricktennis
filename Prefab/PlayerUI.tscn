@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkj1ns1u1ehsf"]
+[gd_scene load_steps=8 format=3 uid="uid://dkj1ns1u1ehsf"]
 
+[ext_resource type="FontFile" uid="uid://c4cd45384fa5g" path="res://Font/TurretRoad-ExtraBold.ttf" id="1_g8kim"]
 [ext_resource type="Script" path="res://Scripts/UI/ScoreLabel.gd" id="1_y4fh5"]
 [ext_resource type="Script" path="res://Scripts/HealthContainer.gd" id="2_li4tp"]
 [ext_resource type="Texture2D" uid="uid://dbr2xqf056073" path="res://Art/PlayerLives.svg" id="2_vdshe"]
@@ -9,26 +10,23 @@
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="ScoreLabel" type="Label" parent="."]
-custom_minimum_size = Vector2(500, 0)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -525.0
-offset_top = 20.0
-offset_right = -25.0
-offset_bottom = 43.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 40
-text = "2000"
-horizontal_alignment = 2
-script = ExtResource("1_y4fh5")
+[node name="ContinueScreen" parent="." instance=ExtResource("4_vism2")]
+visible = false
+
+[node name="GameOverScreen" parent="." instance=ExtResource("5_71c0x")]
+process_mode = 3
+visible = false
+pivot_offset = Vector2(960, 540)
+
+[node name="PauseScreen" parent="." instance=ExtResource("6_40doq")]
+visible = false
 
 [node name="HealthContainer" type="HBoxContainer" parent="."]
-offset_left = -182.0
-offset_top = -30.0
-offset_right = 568.0
-offset_bottom = 107.0
+process_mode = 3
+offset_left = -174.0
+offset_top = -24.0
+offset_right = 576.0
+offset_bottom = 113.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(375, 68.5)
 theme_override_constants/separation = 10
@@ -54,13 +52,19 @@ texture = ExtResource("2_vdshe")
 layout_mode = 2
 texture = ExtResource("2_vdshe")
 
-[node name="ContinueScreen" parent="." instance=ExtResource("4_vism2")]
-visible = false
-
-[node name="GameOverScreen" parent="." instance=ExtResource("5_71c0x")]
-process_mode = 3
-visible = false
-pivot_offset = Vector2(960, 540)
-
-[node name="PauseScreen" parent="." instance=ExtResource("6_40doq")]
-visible = false
+[node name="ScoreLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -511.0
+offset_top = 3.0
+offset_right = -11.0
+offset_bottom = 91.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_g8kim")
+theme_override_font_sizes/font_size = 80
+text = "2000
+"
+horizontal_alignment = 2
+script = ExtResource("1_y4fh5")

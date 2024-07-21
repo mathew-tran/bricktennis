@@ -26,3 +26,8 @@ func _on_button_button_up():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
+
+
+func _on_button_2_button_up():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/Title.tscn")

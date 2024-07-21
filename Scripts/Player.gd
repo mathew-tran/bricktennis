@@ -136,7 +136,7 @@ func MoveRacket():
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .05)
+	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .15)
 	await tween.finished
 	bCanShoot = true
 

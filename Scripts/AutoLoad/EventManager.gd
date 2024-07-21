@@ -8,3 +8,4 @@ signal AddPlayerHealth()
 signal NewRoundStart
 
 signal PlayerDeath
+signal BGColorChange(newColor)

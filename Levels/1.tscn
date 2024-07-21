@@ -7,6 +7,7 @@
 [node name="Grid" type="Panel"]
 custom_minimum_size = Vector2(1800, 800)
 script = ExtResource("1_vphot")
+ColorToTweenTo = Color(0, 0, 0.870588, 1)
 metadata/_edit_lock_ = true
 
 [node name="Brick" parent="." instance=ExtResource("1_tpnxj")]
@@ -32,6 +33,45 @@ position = Vector2(1116, 380)
 
 [node name="Brick5" parent="." instance=ExtResource("1_tpnxj")]
 position = Vector2(972, 460)
+
+[node name="Brick6" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(828, 460)
+
+[node name="Brick11" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(1116, 460)
+
+[node name="Brick12" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(972, 540)
+
+[node name="Brick13" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(1404, 300)
+
+[node name="Brick14" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(540, 300)
+
+[node name="Brick15" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(540, 220)
+
+[node name="Brick16" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(684, 220)
+
+[node name="Brick17" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(828, 220)
+
+[node name="Brick18" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(1116, 220)
+
+[node name="Brick19" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(1260, 220)
+
+[node name="Brick20" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(1404, 220)
+
+[node name="Brick21" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(1260, 140)
+
+[node name="Brick22" parent="." instance=ExtResource("1_tpnxj")]
+position = Vector2(684, 140)
 
 [node name="BrickPurple" parent="." instance=ExtResource("3_7fvgg")]
 position = Vector2(1260, 300)

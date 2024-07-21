@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqcrvp1tr6o3o"]
+[gd_scene load_steps=4 format=3 uid="uid://dqcrvp1tr6o3o"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_gg1c1"]
 [ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="2_nqpjy"]
+[ext_resource type="PackedScene" uid="uid://dr6xkalt84ha0" path="res://Prefab/BrickPurple.tscn" id="3_cj1cl"]
 
 [node name="Grid" type="Panel"]
 custom_minimum_size = Vector2(1800, 800)
 script = ExtResource("1_gg1c1")
+ColorToTweenTo = Color(0.493924, 0.146393, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Brick" parent="." instance=ExtResource("2_nqpjy")]
@@ -42,10 +44,28 @@ position = Vector2(1704, 520)
 position = Vector2(1416, 520)
 
 [node name="Brick4" parent="." instance=ExtResource("2_nqpjy")]
-position = Vector2(1416, 600)
+position = Vector2(1692, 200)
+
+[node name="Brick15" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(1548, 200)
+
+[node name="Brick16" parent="." instance=ExtResource("2_nqpjy")]
+position = Vector2(264, 200)
 
 [node name="Brick5" parent="." instance=ExtResource("2_nqpjy")]
-position = Vector2(1272, 600)
+position = Vector2(1272, 520)
 
 [node name="Brick6" parent="." instance=ExtResource("2_nqpjy")]
-position = Vector2(1128, 600)
+position = Vector2(120, 200)
+
+[node name="BrickPurple" parent="." instance=ExtResource("3_cj1cl")]
+position = Vector2(828, 280)
+
+[node name="BrickPurple4" parent="." instance=ExtResource("3_cj1cl")]
+position = Vector2(684, 280)
+
+[node name="BrickPurple2" parent="." instance=ExtResource("3_cj1cl")]
+position = Vector2(1116, 280)
+
+[node name="BrickPurple3" parent="." instance=ExtResource("3_cj1cl")]
+position = Vector2(972, 280)

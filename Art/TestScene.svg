@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="793.70081"
+   height="1122.5197"
+   viewBox="0 0 210 296.99999"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.4378367"
-     inkscape:cx="246.89869"
-     inkscape:cy="795.29198"
+     inkscape:zoom="0.71891835"
+     inkscape:cx="147.44373"
+     inkscape:cy="801.89913"
      inkscape:window-width="1920"
      inkscape:window-height="1010"
      inkscape:window-x="1699"
@@ -90,13 +90,13 @@
        inkscape:export-filename="Player.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" /><rect
-       style="fill:#003399;fill-rule:evenodd;stroke:#000000;stroke-width:0.550631;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="fill:#003399;fill-rule:evenodd;stroke:#000000;stroke-width:0.593539;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="rect35"
-       width="34.390656"
-       height="17.195328"
-       x="126.88052"
-       y="127.37527"
-       ry="3.1410577"
+       width="35.40646"
+       height="19.40646"
+       x="126.37281"
+       y="126.33839"
+       ry="3.5449636"
        inkscape:export-filename="Brick.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" /><rect
@@ -251,7 +251,7 @@
        id="path42"
        style="fill:#003399;fill-rule:evenodd;stroke:#003399;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
        d="m 143.11891,196.72288 a 15.45725,17.205389 89.173452 0 0 -16.98036,15.70343 15.45725,17.205389 89.173452 0 0 17.42633,15.20786 15.45725,17.205389 89.173452 0 0 16.98088,-15.70395 15.45725,17.205389 89.173452 0 0 -17.42685,-15.20734 z m -0.23978,2.04225 a 13.024419,14.497416 89.173452 0 1 14.68386,12.81369 13.024419,14.497416 89.173452 0 1 -14.30817,13.23226 13.024419,14.497416 89.173452 0 1 -14.68386,-12.8142 13.024419,14.497416 89.173452 0 1 14.30817,-13.23175 z" /><rect
-       style="fill:#bfbfbf;fill-rule:evenodd;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="fill:#81c5bc;fill-rule:evenodd;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
        id="rect3"
        width="23.921932"
        height="25.394051"
@@ -294,7 +294,7 @@
        id="image1"
        x="-58.118931"
        y="215.36337" /><circle
-       style="fill:#bfbfbf;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1;stroke-dasharray:none"
+       style="fill:#bfbfbf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
        id="path17"
        cx="179.47302"
        cy="182.23944"
@@ -390,8 +390,8 @@
        id="rect29"
        width="298.75131"
        height="2.0818906"
-       x="-23.94174"
-       y="142.34926"
+       x="-24.071857"
+       y="146.64316"
        ry="1.0409453"
        inkscape:export-filename="BoundaryLine.svg"
        inkscape:export-xdpi="96"
@@ -402,13 +402,13 @@
        id="rect34"
        style="fill:#3366cc;fill-rule:evenodd;stroke:#3366cc;stroke-width:0.4913;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        d="m 128.56677,139.31699 v 1.26589 c 0,1.55263 1.25027,2.80239 2.80291,2.80239 h 25.07943 c 1.55263,0 2.80291,-1.24976 2.80291,-2.80239 v -1.26589 c 0,1.55265 -1.25028,2.80291 -2.80291,2.80291 h -25.07943 c -1.55264,0 -2.80291,-1.25026 -2.80291,-2.80291 z" /><rect
-       style="fill:#770099;fill-rule:evenodd;stroke:#000000;stroke-width:0.550631;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
+       style="fill:#770099;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.593539;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="rect36"
-       width="34.390656"
-       height="17.195328"
-       x="94.611221"
-       y="100.83116"
-       ry="3.1410577"
+       width="35.40646"
+       height="19.40646"
+       x="94.103508"
+       y="99.794266"
+       ry="3.5449636"
        inkscape:export-filename="BrickPurple.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" /><rect
@@ -419,7 +419,7 @@
        x="95.130966"
        y="101.09777"
        ry="3.0335343" /><rect
-       style="fill:#770099;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
+       style="fill:#770099;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="rect38"
        width="31.228359"
        height="15.61418"
@@ -427,7 +427,7 @@
        y="101.60236"
        ry="2.8522305" /><path
        id="path38"
-       style="fill:#cd1fff;fill-rule:evenodd;stroke:none;stroke-width:0.4913;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
+       style="fill:#cd1fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.4913;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        d="m 96.297466,112.77288 v 1.26589 c 0,1.55263 1.25027,2.80239 2.80291,2.80239 h 25.079434 c 1.55263,0 2.80291,-1.24976 2.80291,-2.80239 v -1.26589 c 0,1.55265 -1.25028,2.80291 -2.80291,2.80291 H 99.100376 c -1.55264,0 -2.80291,-1.25026 -2.80291,-2.80291 z" /><path
        id="path41"
        style="fill:#72ebf5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.401351;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
@@ -453,7 +453,7 @@
        inkscape:export-filename="BrickParticle.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" /><rect
-       style="fill:#bfbfbf;fill-rule:evenodd;stroke-width:2.5;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;stroke:#000000;stroke-dasharray:none"
+       style="fill:#bfbfbf;fill-rule:evenodd;stroke:#000000;stroke-width:2.5;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
        id="rect60"
        width="34.962826"
        height="33.858734"
@@ -483,11 +483,14 @@
        id="path62"
        style="fill:#72ebf5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.401351;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
        d="m 19.692502,182.90734 a 6.3320548,4.7000816 0 0 0 -0.174738,1.06398 6.3320548,4.7000816 0 0 0 6.332049,4.70004 6.3320548,4.7000816 0 0 0 6.332049,-4.70004 6.3320548,4.7000816 0 0 0 -0.04018,-0.51851 6.3320548,4.7000816 0 0 1 -6.161201,3.65187 6.3320548,4.7000816 0 0 1 -6.287975,-4.19734 z" /><circle
-       style="fill:#6699ff;fill-opacity:0.650358;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers;filter:url(#filter63)"
+       style="mix-blend-mode:normal;fill:#6699ff;fill-opacity:0.650358;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers;filter:url(#filter63)"
        id="path63"
        cx="178.65224"
        cy="161.2164"
        r="3.5131905"
        inkscape:export-filename="BallParticle.svg"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" /></g></svg>
+       inkscape:export-ydpi="96" /><path
+       id="path64"
+       style="fill:#3366cc;fill-rule:evenodd;stroke:#003399;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       d="m 143.11882,196.90684 a 15.45725,17.205389 89.173452 0 0 -14.25391,7.16545 h 2.7466 a 13.024419,14.497416 89.173452 0 1 11.26753,-5.1232 13.024419,14.497416 89.173452 0 1 11.73055,5.1232 h 3.25665 a 15.45725,17.205389 89.173452 0 0 -14.74742,-7.16545 z" /></g></svg>

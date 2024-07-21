@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2p6xklb20ulo"]
+
+[ext_resource type="Script" path="res://Scripts/Title.gd" id="1_45ucs"]
+[ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="1_lqkir"]
+[ext_resource type="FontFile" uid="uid://cxrupt8serby5" path="res://Font/TurretRoad-Medium.ttf" id="2_key02"]
+[ext_resource type="AudioStream" uid="uid://ccb142gnst5yu" path="res://Audio/002_Synthwave_15k.mp3" id="3_0xw65"]
+[ext_resource type="PackedScene" uid="uid://dj5amtiw3t0ai" path="res://Prefab/Racket.tscn" id="3_xwtnk"]
+[ext_resource type="Theme" uid="uid://q3v47v5i6o8y" path="res://Themes/ButtonTheme.tres" id="5_lcw7l"]
+[ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="6_x8kao"]
+[ext_resource type="PackedScene" uid="uid://dpq7okbeo1ats" path="res://Prefab/Credits.tscn" id="8_wc84v"]
+[ext_resource type="PackedScene" uid="uid://cxwicmi14f386" path="res://Prefab/Controls.tscn" id="9_vdx75"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_45ucs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(864, 620)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lqkir")
+
+[node name="Racket" parent="Sprite2D" instance=ExtResource("3_xwtnk")]
+show_behind_parent = true
+position = Vector2(108, 9.99997)
+rotation = -0.536603
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1332.0
+offset_top = 240.0
+offset_right = 1845.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("2_key02")
+theme_override_font_sizes/font_size = 80
+text = "BRICK TENNIS"
+
+[node name="Brick" parent="Label" instance=ExtResource("6_x8kao")]
+position = Vector2(36, 120)
+
+[node name="Brick2" parent="Label" instance=ExtResource("6_x8kao")]
+position = Vector2(180, 120)
+
+[node name="Brick3" parent="Label" instance=ExtResource("6_x8kao")]
+position = Vector2(324, 120)
+rotation = -0.0100789
+
+[node name="Brick4" parent="Label" instance=ExtResource("6_x8kao")]
+position = Vector2(468, 120)
+rotation = -0.0100789
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0xw65")
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 72.0
+offset_top = 720.0
+offset_right = 472.0
+offset_bottom = 910.0
+theme_override_constants/separation = 30
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+theme = ExtResource("5_lcw7l")
+text = "PLAY"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+theme = ExtResource("5_lcw7l")
+text = "CREDITS"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+theme = ExtResource("5_lcw7l")
+text = "EXIT"
+
+[node name="Credits" parent="." instance=ExtResource("8_wc84v")]
+visible = false
+
+[node name="Controls Label" parent="." instance=ExtResource("9_vdx75")]
+
+[connection signal="button_up" from="VBoxContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="VBoxContainer/Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="CreditsExited" from="Credits" to="." method="_on_credits_credits_exited"]

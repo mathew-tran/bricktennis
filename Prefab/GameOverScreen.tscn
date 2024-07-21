@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://btefyo531y5vd"]
+[gd_scene load_steps=6 format=3 uid="uid://btefyo531y5vd"]
 
 [ext_resource type="Script" path="res://Scripts/UI/GameOverScreen.gd" id="1_3qbal"]
 [ext_resource type="Theme" uid="uid://q3v47v5i6o8y" path="res://Themes/ButtonTheme.tres" id="1_7d1bb"]
+[ext_resource type="FontFile" uid="uid://c4cd45384fa5g" path="res://Font/TurretRoad-ExtraBold.ttf" id="2_ld4nl"]
+[ext_resource type="PackedScene" uid="uid://cxwicmi14f386" path="res://Prefab/Controls.tscn" id="4_rpx1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncvm5"]
-bg_color = Color(1, 1, 1, 0)
+bg_color = Color(0, 0, 0, 0.772549)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -39,6 +41,7 @@ offset_top = 294.0
 offset_right = 230.0
 offset_bottom = 404.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ld4nl")
 theme_override_font_sizes/font_size = 80
 text = "GAME OVER"
 
@@ -68,5 +71,20 @@ layout_mode = 2
 theme = ExtResource("1_7d1bb")
 text = "BACK TO MAIN MENU"
 
+[node name="Controls Label" parent="." instance=ExtResource("4_rpx1h")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -82.0
+offset_right = -49.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_up" from="Panel/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/Button2" to="." method="_on_button_2_button_up"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3u52pew66m5c"]
+[gd_scene load_steps=9 format=3 uid="uid://d3u52pew66m5c"]
 
+[ext_resource type="Script" path="res://Scripts/BG.gd" id="1_1n4we"]
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
 [ext_resource type="PackedScene" uid="uid://cn4c8ce1g64x" path="res://Prefab/Player.tscn" id="3_id3je"]
 [ext_resource type="PackedScene" uid="uid://bl8s7sgb3th6r" path="res://Prefab/Ball.tscn" id="4_jg5su"]
@@ -7,7 +8,23 @@
 [ext_resource type="PackedScene" uid="uid://dkj1ns1u1ehsf" path="res://Prefab/PlayerUI.tscn" id="6_n6jnf"]
 [ext_resource type="PackedScene" uid="uid://deiyctrhgfslv" path="res://Prefab/GameManager.tscn" id="7_sl4s0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3afpj"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="BG" type="Panel" parent="."]
+modulate = Color(0.207843, 1, 1, 1)
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3afpj")
+script = ExtResource("1_1n4we")
 
 [node name="BackGround" type="Node2D" parent="."]
 

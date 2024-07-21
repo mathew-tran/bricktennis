@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpq7okbeo1ats"]
+
+[ext_resource type="FontFile" uid="uid://c4cd45384fa5g" path="res://Font/TurretRoad-ExtraBold.ttf" id="1_3h6c2"]
+[ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_uqcb0"]
+[ext_resource type="Theme" uid="uid://q3v47v5i6o8y" path="res://Themes/ButtonTheme.tres" id="2_glxe5"]
+[ext_resource type="FontFile" uid="uid://cxrupt8serby5" path="res://Font/TurretRoad-Medium.ttf" id="4_d58tp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47xd3"]
+bg_color = Color(0.0361009, 0.0361009, 0.0361009, 1)
+
+[node name="Credits" type="Panel"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_47xd3")
+script = ExtResource("1_uqcb0")
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_3h6c2")
+theme_override_font_sizes/font_size = 60
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="Credits"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 0
+offset_left = -54.0
+offset_top = 900.0
+offset_right = 346.0
+offset_bottom = 980.0
+theme = ExtResource("2_glxe5")
+text = "GO BACK"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 220.0
+offset_right = 1882.0
+offset_bottom = 406.0
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_d58tp")
+theme_override_font_sizes/font_size = 40
+text = "Game Design & Programming
+Mathew Tran"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_d58tp")
+theme_override_font_sizes/font_size = 40
+text = "Music - Calm Ambient 2
+The Cynic Project / cynicmusic.com / pixelsphere.org"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_d58tp")
+theme_override_font_sizes/font_size = 40
+text = "SFX
+Kenney.nl"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_d58tp")
+theme_override_font_sizes/font_size = 40
+text = "Font
+Turret Road font by The Turret Road Project Authors (https://github.com/noponies/turret-road), licensed under the SIL Open Font License, Version 1.1."
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="button_up" from="Credits/Continue" to="." method="_on_continue_button_up"]
