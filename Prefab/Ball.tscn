@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl8s7sgb3th6r"]
+[gd_scene load_steps=8 format=3 uid="uid://bl8s7sgb3th6r"]
 
 [ext_resource type="Texture2D" uid="uid://doftsm7yu3cen" path="res://Art/Ball.svg" id="1_2ip2b"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_dug80"]
 [ext_resource type="Texture2D" uid="uid://fk0hi32nae0w" path="res://Art/BallParticle.svg" id="3_qdwdp"]
+[ext_resource type="AudioStream" uid="uid://2iykb8q02qj3" path="res://Audio/SFX/zap1.mp3" id="4_4k3hh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_obai6"]
 friction = 0.5
@@ -44,5 +45,9 @@ speed_scale = 10.0
 texture = ExtResource("3_qdwdp")
 gravity = Vector2(0, 0)
 color_ramp = SubResource("Gradient_drdv8")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4k3hh")
+volume_db = -10.0
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

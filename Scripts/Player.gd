@@ -83,10 +83,15 @@ func _process(delta):
 		if Input.is_action_pressed("jetpack"):
 			velocity.y -= JetpackSpeed
 			$JetParticle.emitting = true
+			PlayJetpackSound()
 
 		apply_impulse(velocity *delta * 400)
 		UpdateRacket()
 
+func PlayJetpackSound():
+	if $JetpackSound.playing == false:
+		$JetpackSound.pitch_scale = randf_range(1.0,1.2)
+		$JetpackSound.play()
 
 func _physics_process(delta):
 	var bLeft = linear_velocity.x <= 0
@@ -124,6 +129,8 @@ func MoveRacket():
 	if PlayerDirection == DIRECTION.RIGHT:
 		targetDegrees = -targetDegrees
 
+	$SwingSound.pitch_scale = randf_range(1.0,1.2)
+	$SwingSound.play()
 	var tween = get_tree().create_tween()
 	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .25)
 	tween.set_trans(Tween.TRANS_CUBIC)
@@ -142,6 +149,7 @@ func _on_hit_collision_body_entered(body):
 			return
 		if bCanBeHurt == false:
 			return
+		$HitSound.play()
 		bCanMove = false
 		lock_rotation = false
 		modulate = Color.DARK_RED

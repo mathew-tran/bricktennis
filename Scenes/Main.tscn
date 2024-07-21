@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3u52pew66m5c"]
+[gd_scene load_steps=7 format=3 uid="uid://d3u52pew66m5c"]
 
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
 [ext_resource type="PackedScene" uid="uid://cn4c8ce1g64x" path="res://Prefab/Player.tscn" id="3_id3je"]
 [ext_resource type="PackedScene" uid="uid://bl8s7sgb3th6r" path="res://Prefab/Ball.tscn" id="4_jg5su"]
+[ext_resource type="AudioStream" uid="uid://ccb142gnst5yu" path="res://Audio/002_Synthwave_15k.mp3" id="6_ah1xh"]
 [ext_resource type="PackedScene" uid="uid://dkj1ns1u1ehsf" path="res://Prefab/PlayerUI.tscn" id="6_n6jnf"]
 [ext_resource type="PackedScene" uid="uid://deiyctrhgfslv" path="res://Prefab/GameManager.tscn" id="7_sl4s0"]
 
@@ -41,3 +42,8 @@ zoom = Vector2(0.9, 0.9)
 position = Vector2(756, 920)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_n6jnf")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ah1xh")
+volume_db = -10.0
+autoplay = true

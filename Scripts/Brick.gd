@@ -22,6 +22,7 @@ func _on_area_2d_body_entered(body):
 		if bIsDead:
 			return
 		bIsDead = true
+		$AudioStreamPlayer2D.play()
 		$CPUParticles2D.emitting = true
 		EventManager.RewardPoints.emit(PointsGained, global_position)
 		var tween = get_tree().create_tween()

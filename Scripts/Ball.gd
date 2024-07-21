@@ -30,6 +30,8 @@ func _physics_process(delta):
 		linear_velocity = linear_velocity.normalized() * MaxSpeed
 
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	$HitSound.pitch_scale = randf_range(1, 1.2)
+	$HitSound.play()
 	$Sprite2D.modulate = Color(50,50,50)
 	$Sprite2D.scale = Vector2(1.3,1.3)
 	var tween = get_tree().create_tween()

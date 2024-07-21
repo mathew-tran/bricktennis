@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr6xkalt84ha0"]
+[gd_scene load_steps=6 format=3 uid="uid://dr6xkalt84ha0"]
 
 [ext_resource type="Script" path="res://Scripts/Brick.gd" id="1_sm1ln"]
 [ext_resource type="Texture2D" uid="uid://b3ree1cyuat26" path="res://Art/BrickPurple.svg" id="2_atigm"]
 [ext_resource type="PackedScene" uid="uid://320ja1wtdbl4" path="res://Prefab/BrickParticle.tscn" id="3_tw7t2"]
+[ext_resource type="AudioStream" uid="uid://douqk3ux1eynh" path="res://Audio/SFX/laser2.mp3" id="4_lpqnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5q150"]
 size = Vector2(135, 70)
@@ -24,5 +25,9 @@ shape = SubResource("RectangleShape2D_5q150")
 texture = ExtResource("2_atigm")
 
 [node name="CPUParticles2D" parent="." instance=ExtResource("3_tw7t2")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lpqnq")
+pitch_scale = 1.2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
