@@ -30,9 +30,11 @@ func _ready():
 	EventManager.UpdatePlayerHealth.connect(OnUpdatePlayerHealth)
 	EventManager.NewRoundStart.connect(OnNewRoundStart)
 	StartPosition = global_position
+	PlayerDirection = DIRECTION.RIGHT
 
 func OnNewRoundStart():
 	freeze = true
+	$Sprite2D/HappyFace.visible = true
 	bCanBeHurt = false
 	$HitCollision.monitoring = false
 	modulate = Color(20,20,20,.1)
@@ -44,12 +46,19 @@ func OnNewRoundStart():
 	tween2.tween_property(self, "rotation_degrees", 360, .8)
 	tween.set_trans(Tween.TRANS_QUAD)
 
-
+	PlayerDirection = DIRECTION.RIGHT
+	UpdateRacket(true)
 	await tween2.finished
 	modulate = Color.WHITE
 	$HitCollision.monitoring = true
 	freeze = false
 	bCanBeHurt = true
+
+	var timer = get_tree().create_timer(1)
+	$HappySound.pitch_scale = randf_range(.9, 1.2)
+	$HappySound.play()
+	await timer.timeout
+	$Sprite2D/HappyFace.visible = false
 
 func OnUpdatePlayerHealth(amount):
 	if bIsAlive:
@@ -102,17 +111,25 @@ func _physics_process(delta):
 
 
 
-func UpdateRacket():
-	if bCanShoot:
+func UpdateRacket(bForce = false):
+	if bCanShoot or bForce:
 		match PlayerDirection:
 			DIRECTION.LEFT:
 				$Hand.scale = Vector2(-1,1)
 				$Hand.rotation_degrees = -DefaultHandRotation
 				PlayerSprite.flip_h = true
+				$Sprite2D/HurtFace.offset.x = -6
+				$Sprite2D/HappyFace.offset.x = -6
 			DIRECTION.RIGHT:
 				$Hand.scale = Vector2(1,1)
 				$Hand.rotation_degrees = DefaultHandRotation
 				PlayerSprite.flip_h = false
+				$Sprite2D/HurtFace.offset.x = 6
+				$Sprite2D/HappyFace.offset.x = 6
+
+
+
+
 func _input(event):
 	if bIsAlive == false:
 		return
@@ -149,8 +166,10 @@ func _on_hit_collision_body_entered(body):
 			return
 		if bCanBeHurt == false:
 			return
+		$HitSound.pitch_scale = randf_range(0.9, 1.2)
 		$HitSound.play()
 		bCanMove = false
+		$Sprite2D/HurtFace.visible = true
 		lock_rotation = false
 		modulate = Color.DARK_RED
 		EventManager.RewardPoints.emit(5, global_position)
@@ -176,6 +195,7 @@ func _on_hit_collision_body_entered(body):
 			await tween.finished
 			bCanMove = true
 			modulate = Color.WHITE
+			$Sprite2D/HurtFace.visible = false
 		else:
 			self_modulate = Color.BLACK
 

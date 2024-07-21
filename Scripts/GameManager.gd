@@ -11,7 +11,7 @@ var PointsToNextLife = 500
 
 var CurrentPointsToLife = 0
 
-var Levels = [1,2]
+var Levels = [0,1,2]
 func _ready():
 	EventManager.RewardPoints.connect(GivePoints)
 	SpawnNextLevel()

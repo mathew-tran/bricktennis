@@ -1,14 +1,101 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2p6xklb20ulo"]
+[gd_scene load_steps=15 format=3 uid="uid://c2p6xklb20ulo"]
 
 [ext_resource type="Script" path="res://Scripts/Title.gd" id="1_45ucs"]
 [ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="1_lqkir"]
 [ext_resource type="FontFile" uid="uid://cxrupt8serby5" path="res://Font/TurretRoad-Medium.ttf" id="2_key02"]
 [ext_resource type="AudioStream" uid="uid://ccb142gnst5yu" path="res://Audio/002_Synthwave_15k.mp3" id="3_0xw65"]
 [ext_resource type="PackedScene" uid="uid://dj5amtiw3t0ai" path="res://Prefab/Racket.tscn" id="3_xwtnk"]
+[ext_resource type="Texture2D" uid="uid://dj5soc6gx2lb5" path="res://Art/HappyFace.svg" id="4_c1jya"]
+[ext_resource type="AudioStream" uid="uid://2mpf3uw1261d" path="res://Audio/SFX/phaseJump3.mp3" id="5_k7wau"]
 [ext_resource type="Theme" uid="uid://q3v47v5i6o8y" path="res://Themes/ButtonTheme.tres" id="5_lcw7l"]
 [ext_resource type="PackedScene" uid="uid://de2jnlnc8fvw3" path="res://Prefab/Brick.tscn" id="6_x8kao"]
 [ext_resource type="PackedScene" uid="uid://dpq7okbeo1ats" path="res://Prefab/Credits.tscn" id="8_wc84v"]
 [ext_resource type="PackedScene" uid="uid://cxwicmi14f386" path="res://Prefab/Controls.tscn" id="9_vdx75"]
+
+[sub_resource type="Animation" id="Animation_i6h0f"]
+resource_name = "animate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(864, 620), Vector2(864, 600), Vector2(864, 600), Vector2(864, 620), Vector2(864, 620)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.1, 0),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_t6yus"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, 620)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oarko"]
+_data = {
+"RESET": SubResource("Animation_t6yus"),
+"animate": SubResource("Animation_i6h0f")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_45ucs")
@@ -22,6 +109,14 @@ texture = ExtResource("1_lqkir")
 show_behind_parent = true
 position = Vector2(108, 9.99997)
 rotation = -0.536603
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(7, 8)
+texture = ExtResource("4_c1jya")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sprite2D"]
+stream = ExtResource("5_k7wau")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1332.0
@@ -49,6 +144,8 @@ rotation = -0.0100789
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0xw65")
 autoplay = true
+
+[node name="Controls Label" parent="." instance=ExtResource("9_vdx75")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 72.0
@@ -78,9 +175,13 @@ text = "EXIT"
 [node name="Credits" parent="." instance=ExtResource("8_wc84v")]
 visible = false
 
-[node name="Controls Label" parent="." instance=ExtResource("9_vdx75")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oarko")
+}
 
 [connection signal="button_up" from="VBoxContainer/Button2" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="VBoxContainer/Credits" to="." method="_on_credits_button_up"]
 [connection signal="button_up" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_button_up"]
 [connection signal="CreditsExited" from="Credits" to="." method="_on_credits_credits_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

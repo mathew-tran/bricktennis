@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cn4c8ce1g64x"]
+[gd_scene load_steps=17 format=3 uid="uid://cn4c8ce1g64x"]
 
 [ext_resource type="Texture2D" uid="uid://hxbpsl2dh3w8" path="res://Art/Player.svg" id="1_cfaw8"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_n0p7j"]
 [ext_resource type="PackedScene" uid="uid://dj5amtiw3t0ai" path="res://Prefab/Racket.tscn" id="1_wx2k5"]
 [ext_resource type="Texture2D" uid="uid://d1l5w241lv6el" path="res://Art/JetParticle.svg" id="4_8mxar"]
+[ext_resource type="Texture2D" uid="uid://djoeglh602igy" path="res://Art/HurtFace.svg" id="4_jfhyp"]
+[ext_resource type="Texture2D" uid="uid://dj5soc6gx2lb5" path="res://Art/HappyFace.svg" id="5_cu3j3"]
 [ext_resource type="AudioStream" uid="uid://cku7smkbb58uc" path="res://Audio/SFX/phaserDown3.mp3" id="5_j7hlr"]
 [ext_resource type="AudioStream" uid="uid://dvv3autfis714" path="res://Audio/SFX/phaserUp1.mp3" id="6_db8rx"]
 [ext_resource type="AudioStream" uid="uid://cvg045sgys01x" path="res://Audio/SFX/pepSound2.mp3" id="7_a61cv"]
+[ext_resource type="AudioStream" uid="uid://2mpf3uw1261d" path="res://Audio/SFX/phaseJump3.mp3" id="10_qw48q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnx5s"]
 rough = true
@@ -57,6 +60,19 @@ shape = SubResource("CircleShape2D_727eo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cfaw8")
+flip_h = true
+
+[node name="HurtFace" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(0, 8)
+texture = ExtResource("4_jfhyp")
+offset = Vector2(-6, 0)
+
+[node name="HappyFace" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(0, 8)
+texture = ExtResource("5_cu3j3")
+offset = Vector2(-6, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 55.25)
@@ -93,5 +109,8 @@ volume_db = -10.0
 
 [node name="JetpackSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_a61cv")
+
+[node name="HappySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qw48q")
 
 [connection signal="body_entered" from="HitCollision" to="." method="_on_hit_collision_body_entered"]
