@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6s62thpf5jb" path="res://Art/Racket.svg" id="1_us0ev"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7v2br"]
+custom_solver_bias = 1.0
 radius = 62.63
 
 [node name="Racket" type="RigidBody2D"]
