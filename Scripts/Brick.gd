@@ -42,7 +42,7 @@ func _on_area_2d_body_entered(body):
 		$CPUParticles2D.emitting = true
 		EventManager.RewardPoints.emit(PointsGained, global_position)
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "modulate", Color(500,500,500,1), .4)
+		tween.tween_property(self, "modulate", Color(500,500,500,1), .25)
 		await tween.finished
 		Killed.emit()
 

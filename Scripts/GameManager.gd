@@ -49,13 +49,13 @@ func AddPointsToTotal(amount):
 
 	CurrentPointsToLife -= amount
 	if CurrentPointsToLife <= 0:
-		PointsToNextLife += 1000
+		PointsToNextLife += 250
 		CurrentPointsToLife = PointsToNextLife
 		EventManager.AddPlayerHealth.emit()
 
 func GivePoints(amount, pointPosition):
 	var newAmount = round(amount * Multiplier)
-	Multiplier += .2
+	Multiplier += .4
 	Combo += 1
 	AddPointsToTotal(newAmount)
 	var instance = PointTextClass.instantiate()

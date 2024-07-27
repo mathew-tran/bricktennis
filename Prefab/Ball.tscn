@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://2iykb8q02qj3" path="res://Audio/SFX/zap1.mp3" id="4_4k3hh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_obai6"]
-friction = 0.5
+friction = 0.2
 bounce = 0.9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_isuox"]
@@ -20,13 +20,12 @@ position = Vector2(553, 150)
 collision_layer = 9
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_obai6")
-gravity_scale = 2.5
+gravity_scale = 2.2
 sleeping = true
 continuous_cd = 2
-max_contacts_reported = 1
+max_contacts_reported = 3
 contact_monitor = true
-linear_damp_mode = 1
-linear_damp = 0.1
+constant_torque = 2.0
 script = ExtResource("1_dug80")
 metadata/_edit_group_ = true
 

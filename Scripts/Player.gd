@@ -156,11 +156,11 @@ func MoveRacket():
 	$SwingSound.pitch_scale = randf_range(1.0,1.2)
 	$SwingSound.play()
 	var tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .25)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .20)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .15)
+	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
 	await tween.finished
 	bCanShoot = true
 

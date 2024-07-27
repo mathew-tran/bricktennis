@@ -35,9 +35,9 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.333333)
 position = Vector2(410, 319)
 mass = 20.0
 physics_material_override = SubResource("PhysicsMaterial_cnx5s")
-gravity_scale = 2.0
+gravity_scale = 3.0
 lock_rotation = true
-linear_damp = 2.5
+linear_damp = 2.0
 script = ExtResource("1_n0p7j")
 metadata/_edit_group_ = true
 
@@ -53,7 +53,7 @@ lock_rotation = true
 freeze = true
 
 [node name="Racket" parent="Hand" instance=ExtResource("1_wx2k5")]
-position = Vector2(144, 27)
+position = Vector2(160, 27)
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_vyegu")
 
