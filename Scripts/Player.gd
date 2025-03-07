@@ -12,8 +12,8 @@ enum DIRECTION {
 	RIGHT
 }
 
-var DefaultHandRotation = 35
-var TargetRotation = 120
+var DefaultHandRotation = 15
+var TargetRotation = 80
 
 var bCanMove = true
 
@@ -31,9 +31,10 @@ func _ready():
 	EventManager.NewRoundStart.connect(OnNewRoundStart)
 	StartPosition = global_position
 	PlayerDirection = DIRECTION.RIGHT
-
+	
 func OnNewRoundStart():
 	freeze = true
+	
 	$Sprite2D/HappyFace.visible = true
 	bCanBeHurt = false
 	$HitCollision.monitoring = false
@@ -156,7 +157,7 @@ func MoveRacket():
 	$SwingSound.pitch_scale = randf_range(1.0,1.2)
 	$SwingSound.play()
 	var tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .20)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .30)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	tween = get_tree().create_tween()
@@ -191,7 +192,7 @@ func _on_hit_collision_body_entered(body):
 			angular_velocity += 10
 		else:
 			angular_velocity -= 10
-		var timer = get_tree().create_timer(randf_range(.8, 1.2))
+		var timer = get_tree().create_timer(randf_range(.2, .4))
 
 		await timer.timeout
 
@@ -211,4 +212,3 @@ func SanitizeDirection(vector: Vector2) -> Vector2:
 			return Vector2.RIGHT  # Right
 		else:
 			return Vector2.LEFT  # Left
-

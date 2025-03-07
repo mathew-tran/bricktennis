@@ -37,6 +37,8 @@ func _on_area_2d_body_entered(body):
 	if body is Ball:
 		if bIsDead:
 			return
+		body.Hit()
+		body.ShowRacketHitEffect()
 		bIsDead = true
 		$AudioStreamPlayer2D.play()
 		$CPUParticles2D.emitting = true
@@ -47,4 +49,3 @@ func _on_area_2d_body_entered(body):
 		Killed.emit()
 
 		queue_free()
-

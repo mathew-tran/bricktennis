@@ -5,6 +5,8 @@ signal RewardPoints(amount)
 signal PlayerHit
 signal UpdatePlayerHealth(amount)
 signal AddPlayerHealth()
+
+signal NewRoundInit
 signal NewRoundStart
 
 signal PlayerDeath

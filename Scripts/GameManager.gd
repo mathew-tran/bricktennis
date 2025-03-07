@@ -38,6 +38,7 @@ func SpawnNextLevel():
 		EventManager.PlayerWon.emit()
 
 func OnLevelComplete():
+	EventManager.NewRoundInit.emit()
 	EventManager.RewardPoints.emit(200)
 	SpawnNextLevel()
 	EventManager.NewRoundStart.emit()
@@ -80,6 +81,3 @@ func _on_multiplier_timer_timeout():
 			GivePoints(1000, DefaultPointPosition)
 		elif Combo >= 5:
 			GivePoints(200, DefaultPointPosition)
-
-
-

@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/TurretRoad-Regular.ttf-6a75056d59fb4fa2ea4b5e
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

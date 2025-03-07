@@ -57,6 +57,7 @@ zoom = Vector2(0.9, 0.9)
 
 [node name="Player" parent="." instance=ExtResource("3_id3je")]
 position = Vector2(756, 920)
+scale = Vector2(1, 1)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_n6jnf")]
 
