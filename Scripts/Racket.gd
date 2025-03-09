@@ -8,6 +8,7 @@ func SetCollisionEnabled(bEnable):
 	$CollisionShape2D.set_deferred("disabled", !bEnable)
 
 func Hit():
+	EventManager.RewardPoints.emit(1, global_position)
 	if CanHit() == false:
 		return
 	$AudioStreamPlayer2D.play()

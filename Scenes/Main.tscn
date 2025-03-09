@@ -32,7 +32,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3afpj")
 script = ExtResource("1_1n4we")
 
 [node name="FollowTrail" type="Line2D" parent="." node_paths=PackedStringArray("ParentRef")]
-scale = Vector2(1, 1)
 width = 60.0
 width_curve = SubResource("Curve_5kyxh")
 default_color = Color(1, 1, 1, 0.490196)
@@ -42,7 +41,6 @@ ParentRef = NodePath("../Player/Hand/Racket/Node2D")
 bPlayerTrail = true
 
 [node name="BallTrail" type="Line2D" parent="." node_paths=PackedStringArray("ParentRef")]
-scale = Vector2(1, 1)
 width_curve = SubResource("Curve_5kyxh")
 default_color = Color(1, 1, 1, 0.490196)
 joint_mode = 1

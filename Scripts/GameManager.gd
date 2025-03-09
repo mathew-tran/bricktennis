@@ -59,10 +59,13 @@ func GivePoints(amount, pointPosition):
 	Multiplier += .4
 	Combo += 1
 	AddPointsToTotal(newAmount)
+	if amount == 1:
+		Multiplier = clamp(Multiplier - .5, 1, 999999)
 	var instance = PointTextClass.instantiate()
 	instance.global_position = pointPosition
 	add_child(instance)
 	instance.Setup("+" + str(newAmount))
+	
 	$MultiplierTimer.start()
 
 
