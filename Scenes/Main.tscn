@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkj1ns1u1ehsf" path="res://Prefab/PlayerUI.tscn" id="6_n6jnf"]
 [ext_resource type="PackedScene" uid="uid://deiyctrhgfslv" path="res://Prefab/GameManager.tscn" id="7_sl4s0"]
 [ext_resource type="Script" path="res://Scripts/FollowTrail.gd" id="8_ae6p0"]
-[ext_resource type="AudioStream" uid="uid://dsvldnt418jrt" path="res://Audio/Music/Brick.wav" id="8_sc40k"]
+[ext_resource type="AudioStream" uid="uid://ccb142gnst5yu" path="res://Audio/002_Synthwave_15k.mp3" id="8_dt6tc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3afpj"]
 bg_color = Color(1, 1, 1, 1)
@@ -84,7 +84,7 @@ scale = Vector2(1, 1)
 [node name="CanvasLayer" parent="." instance=ExtResource("6_n6jnf")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_sc40k")
+stream = ExtResource("8_dt6tc")
 volume_db = -10.0
 autoplay = true
 

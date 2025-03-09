@@ -20,7 +20,7 @@ var time_passed : float = 0.0
 func _ready():
 	time_passed = randf_range(0.0, 80.0)
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "scale", Vector2(1,1), .3)
+	tween.tween_property($Sprite2D, "scale", Vector2(1,1), .2)
 
 
 
@@ -44,7 +44,7 @@ func _on_area_2d_body_entered(body):
 		$CPUParticles2D.emitting = true
 		EventManager.RewardPoints.emit(PointsGained, global_position)
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "modulate", Color(500,500,500,1), .25)
+		tween.tween_property(self, "modulate", Color(500,500,500,1), .15)
 		await tween.finished
 		Killed.emit()
 
