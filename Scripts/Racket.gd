@@ -2,8 +2,10 @@ extends RigidBody2D
 
 class_name Racket
 
+var bIsStrengthened = false
+
 func SetCollisionEnabled(bEnable):
-	$CollisionShape2D.disabled = !bEnable
+	$CollisionShape2D.set_deferred("disabled", !bEnable)
 
 func Hit():
 	if CanHit() == false:
@@ -17,3 +19,9 @@ func _on_timer_timeout():
 	
 func CanHit():
 	return $CollisionShape2D.disabled == false
+
+func HasStrengthened():
+	return bIsStrengthened
+	
+func SetIncreasedStrength(bTrue):
+	bIsStrengthened = bTrue

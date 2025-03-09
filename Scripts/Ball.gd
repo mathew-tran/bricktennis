@@ -2,7 +2,7 @@ extends RigidBody2D
 
 class_name Ball
 
-var MaxSpeed = 2000
+var MaxSpeed = 1500
 var MinSpeed = 200
 var StartPosition = Vector2.ZERO
 
@@ -38,7 +38,7 @@ func ShowRacketHitEffect():
 	tween = get_tree().create_tween()
 	tween.tween_property($HitEffect, "scale", Vector2.ZERO, .1)
 	await tween.finished
-
+	
 func _physics_process(delta):
 	if linear_velocity.length() > MaxSpeed:
 		linear_velocity = linear_velocity.normalized() * MaxSpeed
@@ -52,7 +52,8 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 	if body is Racket:
 		if body.CanHit():
 			ShowRacketHitEffect()
-			linear_velocity = linear_velocity.normalized() * MaxSpeed
+			if body.HasStrengthened():
+				linear_velocity *= 2
 			body.Hit()
 	$HitSound.pitch_scale = randf_range(1, 1.2)
 	$HitSound.play()

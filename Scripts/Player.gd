@@ -1,6 +1,8 @@
 extends RigidBody2D
 
-var MoveSpeed = 800
+class_name Player
+
+var MoveSpeed = 400
 var JetpackSpeed = 300
 
 var MaxSpeed = 950
@@ -13,11 +15,11 @@ enum DIRECTION {
 }
 
 var DefaultHandRotation = 15
-var TargetRotation = 80
+
 
 var bCanMove = true
 
-@onready var Racket = $Hand/Racket
+@onready var PlayerRacket = $Hand/Racket
 @onready var PlayerSprite = $Sprite2D
 @export var PlayerDirection : DIRECTION
 
@@ -76,7 +78,9 @@ func _process(delta):
 	if bIsAlive == false:
 		return
 
-	if bCanMove:
+	if bCanShoot == false:
+		PlayerSprite.rotation_degrees = $Hand.rotation_degrees * 1.2
+	if bCanMove and bCanShoot:
 		var velocity = Vector2.ZERO
 
 		if Input.is_action_pressed("move_left"):
@@ -89,7 +93,7 @@ func _process(delta):
 			PlayerSprite.rotation_degrees = 10
 		else:
 			PlayerSprite.rotation_degrees = 0
-
+			
 		if Input.is_action_pressed("jetpack"):
 			velocity.y -= JetpackSpeed
 			$JetParticle.emitting = true
@@ -139,17 +143,20 @@ func UpdateRacket(bForce = false):
 
 
 func _input(event):
-	if bIsAlive == false:
+	if bIsAlive == false or bCanShoot == false:
 		return
 
-	if event.is_action_released("shoot"):
-		MoveRacket()
+	if bCanShoot:
+		if event.is_action_released("shoot"):
+			MoveRacket()
+		elif event.is_action_pressed("right_click"):
+			BlockRacket()
 
 func MoveRacket():
 	if bCanShoot == false:
 		return
 	bCanShoot = false
-	var targetDegrees = TargetRotation
+	var targetDegrees = 60
 	var originalDegrees = $Hand.rotation_degrees
 	if PlayerDirection == DIRECTION.RIGHT:
 		targetDegrees = -targetDegrees
@@ -157,7 +164,7 @@ func MoveRacket():
 	$SwingSound.pitch_scale = randf_range(1.0,1.2)
 	$SwingSound.play()
 	var tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .30)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .10)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	tween = get_tree().create_tween()
@@ -165,9 +172,35 @@ func MoveRacket():
 	await tween.finished
 	bCanShoot = true
 
+func BlockRacket():
+	if bCanShoot == false:
+		return
+	bCanShoot = false
+	var targetDegrees = 360
+	var originalDegrees = $Hand.rotation_degrees
+	if PlayerDirection == DIRECTION.RIGHT:
+		targetDegrees = -targetDegrees
+
+	$SwingSound.pitch_scale = randf_range(1.0,1.2)
+	$SwingSound.play()
+	var tween = get_tree().create_tween()
+	PlayerRacket.SetIncreasedStrength(true)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .30)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	await tween.finished
+	tween = get_tree().create_tween()
+	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
+	PlayerRacket.SetIncreasedStrength(false)
+	
+	await tween.finished
+	tween = get_tree().create_tween()
+	tween.tween_property($Hand, "rotation_degrees", 0, 1.0)
+	await tween.finished
+	bCanShoot = true
+	
 
 func _on_hit_collision_body_entered(body):
-	print(body)
+	pass
 
 	if body is Ball:
 		if bCanMove == false:
