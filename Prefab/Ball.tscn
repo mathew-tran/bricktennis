@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b6q8iu23walxu" path="res://Art/HitEffect.svg" id="5_xhg0l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_obai6"]
-friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_isuox"]
@@ -20,13 +19,14 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 position = Vector2(553, 150)
 collision_layer = 9
 collision_mask = 3
+mass = 40.0
 physics_material_override = SubResource("PhysicsMaterial_obai6")
+gravity_scale = 1.25
 sleeping = true
 freeze_mode = 1
 continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 3
-constant_torque = 2.0
 script = ExtResource("1_dug80")
 metadata/_edit_group_ = true
 
@@ -38,6 +38,7 @@ shape = SubResource("CircleShape2D_isuox")
 one_way_collision_margin = 0.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
 show_behind_parent = true
 amount = 200
 lifetime = 1.52

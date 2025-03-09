@@ -55,7 +55,12 @@ freeze = true
 
 [node name="Racket" parent="Hand" instance=ExtResource("1_wx2k5")]
 position = Vector2(195, 28)
+scale = Vector2(1.2, 1.2)
 physics_material_override = SubResource("PhysicsMaterial_vyegu")
+
+[node name="Node2D" type="Node2D" parent="Hand/Racket"]
+position = Vector2(33.3334, 0)
+scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand"]
 shape = SubResource("CircleShape2D_727eo")

@@ -1,15 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3u52pew66m5c"]
+[gd_scene load_steps=11 format=3 uid="uid://d3u52pew66m5c"]
 
 [ext_resource type="Script" path="res://Scripts/BG.gd" id="1_1n4we"]
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
 [ext_resource type="PackedScene" uid="uid://cn4c8ce1g64x" path="res://Prefab/Player.tscn" id="3_id3je"]
 [ext_resource type="PackedScene" uid="uid://bl8s7sgb3th6r" path="res://Prefab/Ball.tscn" id="4_jg5su"]
-[ext_resource type="AudioStream" uid="uid://ccb142gnst5yu" path="res://Audio/002_Synthwave_15k.mp3" id="6_ah1xh"]
 [ext_resource type="PackedScene" uid="uid://dkj1ns1u1ehsf" path="res://Prefab/PlayerUI.tscn" id="6_n6jnf"]
 [ext_resource type="PackedScene" uid="uid://deiyctrhgfslv" path="res://Prefab/GameManager.tscn" id="7_sl4s0"]
+[ext_resource type="Script" path="res://Scripts/FollowTrail.gd" id="8_ae6p0"]
+[ext_resource type="AudioStream" uid="uid://dsvldnt418jrt" path="res://Audio/Music/Brick.wav" id="8_sc40k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3afpj"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_5kyxh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.629707, 0.910266), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,6 +30,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3afpj")
 script = ExtResource("1_1n4we")
+
+[node name="FollowTrail" type="Line2D" parent="." node_paths=PackedStringArray("ParentRef")]
+scale = Vector2(1, 1)
+width = 60.0
+width_curve = SubResource("Curve_5kyxh")
+default_color = Color(1, 1, 1, 0.490196)
+joint_mode = 1
+script = ExtResource("8_ae6p0")
+ParentRef = NodePath("../Player/Hand/Racket/Node2D")
+bPlayerTrail = true
+
+[node name="BallTrail" type="Line2D" parent="." node_paths=PackedStringArray("ParentRef")]
+scale = Vector2(1, 1)
+width_curve = SubResource("Curve_5kyxh")
+default_color = Color(1, 1, 1, 0.490196)
+joint_mode = 1
+script = ExtResource("8_ae6p0")
+ParentRef = NodePath("../Ball")
 
 [node name="BackGround" type="Node2D" parent="."]
 
@@ -48,6 +71,7 @@ scale = Vector2(4, 4)
 
 [node name="Ball" parent="." instance=ExtResource("4_jg5su")]
 position = Vector2(1080, 760)
+scale = Vector2(0.2, 0.2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 513)
@@ -62,6 +86,8 @@ scale = Vector2(1, 1)
 [node name="CanvasLayer" parent="." instance=ExtResource("6_n6jnf")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_ah1xh")
+stream = ExtResource("8_sc40k")
 volume_db = -10.0
 autoplay = true
+
+[editable path="Player"]

@@ -8,6 +8,7 @@ var JetpackSpeed = 300
 var MaxSpeed = 950
 
 var bCanShoot = true
+var bSwinging = false
 
 enum DIRECTION {
 	LEFT,
@@ -164,6 +165,7 @@ func MoveRacket():
 	$SwingSound.pitch_scale = randf_range(1.0,1.2)
 	$SwingSound.play()
 	var tween = get_tree().create_tween()
+	bSwinging = true
 	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .10)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
@@ -171,6 +173,7 @@ func MoveRacket():
 	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
 	await tween.finished
 	bCanShoot = true
+	bSwinging = false
 
 func BlockRacket():
 	if bCanShoot == false:
@@ -185,13 +188,14 @@ func BlockRacket():
 	$SwingSound.play()
 	var tween = get_tree().create_tween()
 	PlayerRacket.SetIncreasedStrength(true)
+	bSwinging = true
 	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .30)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	tween = get_tree().create_tween()
 	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
 	PlayerRacket.SetIncreasedStrength(false)
-	
+	bSwinging = false
 	await tween.finished
 	tween = get_tree().create_tween()
 	tween.tween_property($Hand, "rotation_degrees", 0, 1.0)
