@@ -12,3 +12,8 @@ func GetPlayer() -> Player:
 		return result[0]
 	return null
 	
+func GetGame() -> GameManager:
+	var result = get_tree().get_nodes_in_group("GameManager")
+	if result:
+		return result[0]
+	return null

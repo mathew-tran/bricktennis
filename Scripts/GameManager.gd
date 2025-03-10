@@ -1,5 +1,7 @@
 extends Node
 
+class_name GameManager
+
 var Points = 0
 var Multiplier = 1.0
 var Combo = 0
@@ -13,6 +15,9 @@ var CurrentPointsToLife = 0
 
 var StageLevel = 0
 var Levels = [0,1,2,3,4,5,6,7]
+
+var bHasSlowed = false
+
 func _ready():
 	EventManager.RewardPoints.connect(GivePoints)
 	EventManager.PlayerDeath.connect(OnPlayerDeath)
@@ -68,7 +73,15 @@ func GivePoints(amount, pointPosition):
 	
 	$MultiplierTimer.start()
 
-
+func ApplySlow():
+	if bHasSlowed:
+		return
+	bHasSlowed = true
+	Engine.time_scale = .8
+	var timer = get_tree().create_timer(.1)
+	await timer.timeout
+	bHasSlowed = false
+	Engine.time_scale = 1
 
 
 func _on_multiplier_timer_timeout():

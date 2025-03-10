@@ -2,7 +2,7 @@ extends RigidBody2D
 
 class_name Ball
 
-var MaxSpeed = 1500
+var MaxSpeed = 2200
 var MinSpeed = 200
 var StartPosition = Vector2.ZERO
 
@@ -25,6 +25,8 @@ func OnNewRoundStart():
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "global_position", StartPosition, 1.5)
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0
 	await tween.finished
 	modulate = Color.WHITE
 	freeze = false
@@ -53,7 +55,8 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 		if body.CanHit():
 			ShowRacketHitEffect()
 			if body.HasStrengthened():
-				linear_velocity *= 2
+				linear_velocity *= 5
+				angular_velocity /= 3
 			body.Hit()
 	$HitSound.pitch_scale = randf_range(1, 1.2)
 	$HitSound.play()
@@ -63,3 +66,9 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 	tween.tween_property($Sprite2D, "scale", Vector2(1,1), .1)
 	await tween.finished
 	$Sprite2D.modulate = Color.WHITE
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	EventManager.RewardPoints.emit(1, Finder.GetPlayer().global_position)
+	OnNewRoundInit()
+	OnNewRoundStart()

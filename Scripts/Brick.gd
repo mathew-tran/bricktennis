@@ -37,6 +37,7 @@ func _on_area_2d_body_entered(body):
 	if body is Ball:
 		if bIsDead:
 			return
+		Finder.GetGame().ApplySlow()
 		body.Hit()
 		body.ShowRacketHitEffect()
 		bIsDead = true

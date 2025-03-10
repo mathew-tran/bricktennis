@@ -14,7 +14,7 @@ func _on_visibility_changed():
 		if is_visible_in_tree():
 			Engine.time_scale = .8
 			var tween = get_tree().create_tween()
-			tween.tween_property(self, "scale", Vector2(1,1), .8)
+			tween.tween_property(self, "scale", Vector2(1,1), .2)
 			await tween.finished
 			$Panel/VBoxContainer/Button.grab_focus()
 			get_tree().paused = true

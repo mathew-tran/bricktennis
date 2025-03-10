@@ -170,7 +170,7 @@ func MoveRacket():
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
+	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .05)
 	await tween.finished
 	bCanShoot = true
 	bSwinging = false
@@ -189,17 +189,11 @@ func BlockRacket():
 	var tween = get_tree().create_tween()
 	PlayerRacket.SetIncreasedStrength(true)
 	bSwinging = true
-	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .30)
+	tween.tween_property($Hand, "rotation_degrees", targetDegrees, .50)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
-	tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", originalDegrees, .1)
 	PlayerRacket.SetIncreasedStrength(false)
 	bSwinging = false
-	await tween.finished
-	tween = get_tree().create_tween()
-	tween.tween_property($Hand, "rotation_degrees", 0, 1.0)
-	await tween.finished
 	bCanShoot = true
 	
 
@@ -220,6 +214,7 @@ func _on_hit_collision_body_entered(body):
 		EventManager.RewardPoints.emit(5, global_position)
 		EventManager.PlayerHit.emit()
 		var direction = Vector2.UP
+		Finder.GetGame().ApplySlow()
 
 		var sanitizePlayerPosition = global_position
 		direction = (global_position - body.global_position).normalized()

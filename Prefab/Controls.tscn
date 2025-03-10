@@ -13,5 +13,6 @@ text = "Controls
 Left / Right Arrows - Move
 Up Arrow - Jetpack
 ENTER - Pause
-Z - Action"
+Z - Light Swing
+X - Heavy Swing"
 horizontal_alignment = 2

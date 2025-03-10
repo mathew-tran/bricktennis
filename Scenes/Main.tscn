@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3u52pew66m5c"]
+[gd_scene load_steps=12 format=3 uid="uid://d3u52pew66m5c"]
 
 [ext_resource type="Script" path="res://Scripts/BG.gd" id="1_1n4we"]
 [ext_resource type="PackedScene" uid="uid://brevac2jass3h" path="res://Prefab/Wall.tscn" id="1_vhe7w"]
@@ -15,6 +15,9 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="Curve" id="Curve_5kyxh"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.629707, 0.910266), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_7mfas"]
+colors = PackedColorArray(1, 1, 1, 0.690196, 1, 1, 1, 0)
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,10 +38,12 @@ script = ExtResource("1_1n4we")
 width = 60.0
 width_curve = SubResource("Curve_5kyxh")
 default_color = Color(1, 1, 1, 0.490196)
+gradient = SubResource("Gradient_7mfas")
 joint_mode = 1
 script = ExtResource("8_ae6p0")
 ParentRef = NodePath("../Player/Hand/Racket/Node2D")
 bPlayerTrail = true
+MaxTrailAmount = 10
 
 [node name="BallTrail" type="Line2D" parent="." node_paths=PackedStringArray("ParentRef")]
 width_curve = SubResource("Curve_5kyxh")

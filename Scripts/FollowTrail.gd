@@ -5,7 +5,7 @@ extends Line2D
 
 var Offset = Vector2.ZERO
 
-var MaxTrailAmount = 30
+@export var MaxTrailAmount = 30
 func _ready():
 	Offset = position
 
