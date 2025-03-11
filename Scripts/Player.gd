@@ -100,6 +100,13 @@ func _process(delta):
 			$JetParticle.emitting = true
 			PlayJetpackSound()
 
+
+		if bCanShoot:
+			if Input.is_action_just_pressed("shoot"):
+				MoveRacket()
+			elif Input.is_action_just_pressed("right_click"):
+				BlockRacket()
+			
 		if velocity != Vector2.ZERO:
 			$Sprite2D/ThinkingFace.visible = true
 		else:
@@ -142,16 +149,6 @@ func UpdateRacket(bForce = false):
 
 
 
-
-func _input(event):
-	if bIsAlive == false or bCanShoot == false:
-		return
-
-	if bCanShoot:
-		if event.is_action_released("shoot"):
-			MoveRacket()
-		elif event.is_action_pressed("right_click"):
-			BlockRacket()
 
 func MoveRacket():
 	if bCanShoot == false:

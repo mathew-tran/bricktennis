@@ -15,11 +15,13 @@ func OnPlayerDeath():
 	visible = false
 	bCanUse = false
 
-func _input(event):
+func _process(delta):
 	if bCanUse == false:
 		return
-	if event.is_action_pressed("pause"):
+		
+	if Input.is_action_just_released("pause"):
 		visible = !visible
+
 
 
 func _on_visibility_changed():

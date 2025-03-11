@@ -59,7 +59,7 @@ position = Vector2(-650, -277)
 scale = Vector2(4, 4)
 
 [node name="Wall4" parent="BackGround" instance=ExtResource("1_vhe7w")]
-position = Vector2(-648, 1022)
+position = Vector2(-648, 981)
 scale = Vector2(4, 5)
 
 [node name="Wall2" parent="BackGround" instance=ExtResource("1_vhe7w")]
