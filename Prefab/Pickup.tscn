@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgfd5xeg0tj7c"]
+
+[ext_resource type="Texture2D" uid="uid://dbr2xqf056073" path="res://Art/PlayerLives.svg" id="1_fkyx1"]
+[ext_resource type="Script" path="res://Scripts/Pickup.gd" id="1_gfhf1"]
+[ext_resource type="AudioStream" uid="uid://klo2ypnxjovx" path="res://Audio/SFX/powerUp4.mp3" id="3_ymwlr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sv77t"]
+radius = 25.1794
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jwbyi"]
+radius = 64.0078
+
+[node name="Pickup" type="RigidBody2D"]
+collision_layer = 129
+collision_mask = 160
+can_sleep = false
+script = ExtResource("1_gfhf1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("1_fkyx1")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sv77t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jwbyi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ymwlr")
+pitch_scale = 1.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

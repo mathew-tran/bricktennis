@@ -96,6 +96,9 @@ right_click={
 2d_physics/layer_1="Default"
 2d_physics/layer_2="Racket"
 2d_physics/layer_4="Ball"
+2d_physics/layer_6="Ground"
+2d_physics/layer_7="Brick"
+2d_physics/layer_8="Pickup"
 
 [rendering]
 

@@ -10,6 +10,7 @@
 size = Vector2(135, 70)
 
 [node name="BrickGreen" type="StaticBody2D"]
+collision_layer = 65
 collision_mask = 9
 script = ExtResource("1_o28vh")
 PointsGained = 35

@@ -44,7 +44,7 @@ func SpawnNextLevel():
 
 func OnLevelComplete():
 	EventManager.NewRoundInit.emit()
-	EventManager.RewardPoints.emit(200)
+	EventManager.RewardPoints.emit(200, Finder.GetPlayer().global_position)
 	SpawnNextLevel()
 	EventManager.NewRoundStart.emit()
 	EventManager.AddPlayerHealth.emit()

@@ -13,6 +13,8 @@ signal Killed
 
 @onready var HighlightMaterial = preload("res://Shader/Brick.tres")
 
+var ChanceToDropPickup = 5
+
 func _enter_tree():
 	$Sprite2D.scale = Vector2.ZERO
 var time_passed : float = 0.0
@@ -37,6 +39,12 @@ func _on_area_2d_body_entered(body):
 	if body is Ball:
 		if bIsDead:
 			return
+			
+		var result = randi() % 100
+		if result <= ChanceToDropPickup:
+			var instance = load("res://Prefab/Pickup.tscn").instantiate()
+			instance.global_position = global_position
+			Finder.GetItems().add_child(instance)
 		Finder.GetGame().ApplySlow()
 		body.Hit()
 		body.ShowRacketHitEffect()

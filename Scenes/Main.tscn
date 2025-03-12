@@ -57,20 +57,24 @@ ParentRef = NodePath("../Ball")
 [node name="Wall" parent="BackGround" instance=ExtResource("1_vhe7w")]
 position = Vector2(-650, -277)
 scale = Vector2(4, 4)
+collision_layer = 32
 
 [node name="Wall4" parent="BackGround" instance=ExtResource("1_vhe7w")]
 position = Vector2(-648, 981)
 scale = Vector2(4, 5)
+collision_layer = 32
 
 [node name="Wall2" parent="BackGround" instance=ExtResource("1_vhe7w")]
 position = Vector2(-244, 1493)
 rotation = -1.5708
 scale = Vector2(4, 4)
+collision_layer = 32
 
 [node name="Wall3" parent="BackGround" instance=ExtResource("1_vhe7w")]
 position = Vector2(1850, 1493)
 rotation = -1.5708
 scale = Vector2(4, 4)
+collision_layer = 32
 
 [node name="Ball" parent="." instance=ExtResource("4_jg5su")]
 position = Vector2(1080, 760)
@@ -92,5 +96,7 @@ scale = Vector2(1, 1)
 stream = ExtResource("8_dt6tc")
 volume_db = -10.0
 autoplay = true
+
+[node name="Items" type="Node2D" parent="." groups=["Items"]]
 
 [editable path="Player"]

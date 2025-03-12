@@ -17,3 +17,9 @@ func GetGame() -> GameManager:
 	if result:
 		return result[0]
 	return null
+
+func GetItems() -> Node2D:
+	var result = get_tree().get_nodes_in_group("Items")
+	if result:
+		return result[0]
+	return null
