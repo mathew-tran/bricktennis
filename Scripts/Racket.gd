@@ -20,6 +20,7 @@ func Hit():
 	if result == 0:
 		target = -target
 	
+	Finder.GetGame().ApplySlow(.4,.1)
 	tween.tween_property($Sprite2D, "rotation_degrees", target, .1)
 	await tween.finished
 	tween = get_tree().create_tween()

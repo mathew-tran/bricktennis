@@ -73,12 +73,12 @@ func GivePoints(amount, pointPosition):
 	
 	$MultiplierTimer.start()
 
-func ApplySlow():
+func ApplySlow(scale = .8, time = .1):
 	if bHasSlowed:
 		return
 	bHasSlowed = true
-	Engine.time_scale = .8
-	var timer = get_tree().create_timer(.1)
+	Engine.time_scale = scale
+	var timer = get_tree().create_timer(time)
 	await timer.timeout
 	bHasSlowed = false
 	Engine.time_scale = 1
