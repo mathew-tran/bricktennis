@@ -41,5 +41,11 @@ position = Vector2(900, 280)
 [node name="BrickPurple" parent="." instance=ExtResource("3_4bem6")]
 position = Vector2(68, 760)
 
+[node name="BrickPurple3" parent="." instance=ExtResource("3_4bem6")]
+position = Vector2(208, 760)
+
+[node name="BrickPurple4" parent="." instance=ExtResource("3_4bem6")]
+position = Vector2(1583, 763)
+
 [node name="BrickPurple2" parent="." instance=ExtResource("3_4bem6")]
 position = Vector2(1728, 760)

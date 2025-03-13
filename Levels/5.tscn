@@ -11,94 +11,112 @@ script = ExtResource("1_imcsh")
 metadata/_edit_lock_ = true
 
 [node name="Brick" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1436, 600)
+position = Vector2(1340, 600)
 
 [node name="Brick2" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1436, 520)
+position = Vector2(1340, 520)
 
 [node name="Brick3" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1436, 440)
+position = Vector2(1340, 440)
 
 [node name="Brick4" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1436, 360)
+position = Vector2(1340, 360)
 
 [node name="Brick5" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1436, 200)
+position = Vector2(1340, 200)
+
+[node name="Brick25" parent="." instance=ExtResource("2_yah12")]
+position = Vector2(1484, 360)
+
+[node name="Brick26" parent="." instance=ExtResource("2_yah12")]
+position = Vector2(1484, 200)
+
+[node name="Brick27" parent="." instance=ExtResource("2_yah12")]
+position = Vector2(332, 360)
+
+[node name="Brick28" parent="." instance=ExtResource("2_yah12")]
+position = Vector2(332, 200)
 
 [node name="Brick6" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1436, 120)
+position = Vector2(1340, 120)
 
 [node name="Brick7" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1436, 40)
+position = Vector2(1340, 40)
 
 [node name="BrickPurple" parent="." instance=ExtResource("3_r83xr")]
-position = Vector2(1436, 280)
+position = Vector2(1340, 280)
 
 [node name="Brick8" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(576, 600)
+position = Vector2(480, 600)
 
 [node name="Brick15" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(720, 600)
+position = Vector2(624, 600)
 
 [node name="Brick16" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(864, 600)
+position = Vector2(768, 600)
 
 [node name="Brick17" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1008, 600)
+position = Vector2(912, 600)
 
 [node name="Brick18" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1152, 600)
+position = Vector2(1056, 600)
 
 [node name="Brick19" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1296, 600)
+position = Vector2(1200, 600)
 
 [node name="Brick9" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(576, 520)
+position = Vector2(480, 520)
 
 [node name="Brick10" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(576, 440)
+position = Vector2(480, 440)
 
 [node name="Brick11" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(576, 360)
+position = Vector2(480, 360)
 
 [node name="Brick12" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(576, 200)
+position = Vector2(480, 200)
 
 [node name="Brick13" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(576, 120)
+position = Vector2(480, 120)
 
 [node name="Brick14" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(576, 40)
+position = Vector2(480, 40)
 
 [node name="Brick20" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(720, 40)
+position = Vector2(624, 40)
 
 [node name="Brick21" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(864, 40)
+position = Vector2(768, 40)
 
 [node name="Brick22" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1008, 40)
+position = Vector2(912, 40)
 
 [node name="Brick23" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1152, 40)
+position = Vector2(1056, 40)
 
 [node name="Brick24" parent="." instance=ExtResource("2_yah12")]
-position = Vector2(1296, 40)
+position = Vector2(1200, 40)
 
 [node name="BrickPurple2" parent="." instance=ExtResource("3_r83xr")]
-position = Vector2(576, 280)
+position = Vector2(480, 280)
+
+[node name="BrickPurple3" parent="." instance=ExtResource("3_r83xr")]
+position = Vector2(332, 280)
+
+[node name="BrickPurple4" parent="." instance=ExtResource("3_r83xr")]
+position = Vector2(1484, 280)
 
 [node name="BrickGreen" parent="." instance=ExtResource("4_jm0k0")]
-position = Vector2(828, 280)
+position = Vector2(732, 280)
 
 [node name="BrickGreen2" parent="." instance=ExtResource("4_jm0k0")]
-position = Vector2(1188, 280)
+position = Vector2(1092, 280)
 
 [node name="BrickGreen3" parent="." instance=ExtResource("4_jm0k0")]
-position = Vector2(1008, 460)
+position = Vector2(912, 460)
 
 [node name="BrickGreen4" parent="." instance=ExtResource("4_jm0k0")]
-position = Vector2(1152, 420)
+position = Vector2(1056, 420)
 
 [node name="BrickGreen5" parent="." instance=ExtResource("4_jm0k0")]
-position = Vector2(864, 420)
+position = Vector2(768, 420)

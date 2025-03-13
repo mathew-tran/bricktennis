@@ -5,12 +5,11 @@ var bHasPickedUp = false
 enum PICKUP_TYPE {
 	LIFE,
 	POINTS,
-	MULT
 }
 
 var PickupType : PICKUP_TYPE
 func _enter_tree():
-	var result = randi() %  PICKUP_TYPE.size()
+	var result = randi()  % PICKUP_TYPE.size()
 	PickupType = result
 	
 	match PickupType:

@@ -13,7 +13,7 @@ signal Killed
 
 @onready var HighlightMaterial = preload("res://Shader/Brick.tres")
 
-var ChanceToDropPickup = 5
+@export var ChanceToDropPickup = 5
 
 func _enter_tree():
 	$Sprite2D.scale = Vector2.ZERO

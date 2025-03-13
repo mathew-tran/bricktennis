@@ -19,6 +19,9 @@ position = Vector2(72, 420)
 [node name="BrickGreen3" parent="." instance=ExtResource("2_dokq1")]
 position = Vector2(72, 500)
 
+[node name="BrickGreen7" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(216, 500)
+
 [node name="BrickGreen4" parent="." instance=ExtResource("2_dokq1")]
 position = Vector2(1728, 340)
 
@@ -27,6 +30,9 @@ position = Vector2(1728, 420)
 
 [node name="BrickGreen6" parent="." instance=ExtResource("2_dokq1")]
 position = Vector2(1728, 500)
+
+[node name="BrickGreen8" parent="." instance=ExtResource("2_dokq1")]
+position = Vector2(1584, 500)
 
 [node name="Brick" parent="." instance=ExtResource("2_dw065")]
 position = Vector2(216, 420)

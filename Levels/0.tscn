@@ -10,25 +10,25 @@ ColorToTweenTo = Color(0.125971, 1.68367e-05, 0.133541, 1)
 metadata/_edit_lock_ = true
 
 [node name="Brick" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1404, 580)
+position = Vector2(970, 307)
 
 [node name="Brick2" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1548, 580)
+position = Vector2(1114, 307)
 
 [node name="Brick3" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1548, 500)
+position = Vector2(1114, 227)
 
 [node name="Brick4" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1404, 500)
+position = Vector2(970, 227)
 
 [node name="Brick5" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1260, 580)
+position = Vector2(826, 307)
 
 [node name="Brick6" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1116, 580)
+position = Vector2(682, 307)
 
 [node name="Brick7" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1260, 500)
+position = Vector2(826, 227)
 
 [node name="Brick8" parent="." instance=ExtResource("2_uxngi")]
-position = Vector2(1116, 500)
+position = Vector2(682, 227)
